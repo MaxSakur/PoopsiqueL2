@@ -1,0 +1,47 @@
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 12px 48px;
+    gap: 48px;
+}
+
+.raidList {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* padding: 0 8px; */
+}
+
+.raidList_item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 4px;
+    gap: 12px;
+}
+.removeButton {
+    height: 24px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+.timeInput {
+    padding: 0 4px;
+    margin: 0 8px;
+}
+
+.raidList_item_name {
+    flex: 1;
+    text-align: start;
+}
+
+.respawn {
+    border: 1px solid red;
+}
+
+.respawn h3 {
+    
+}

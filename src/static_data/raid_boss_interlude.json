@@ -1,0 +1,266 @@
+[
+    {
+      "name": "Cabrio",
+      "lvl": 70,
+      "location": "Seal of Shilen",
+     "respTime": 12
+    },
+    {
+      "name": "Korim",
+      "lvl": 70,
+      "location": "7 floor ToI",
+     "respTime": 12
+    },
+    {
+      "name": "Skylancer",
+      "lvl": 70,
+      "location": "Дорога с колизея",
+     "respTime": 12
+    },
+    {
+      "name": "Lokness",
+      "lvl": 70,
+      "location": "1ый остров",
+     "respTime": 12
+    },
+    {
+      "name": "Palibati",
+      "lvl": 70,
+      "location": "Seal of Shilen",
+     "respTime": 12
+    },
+    {
+      "name": "Behemoth",
+      "lvl": 70,
+      "location": "Варка",
+     "respTime": 12
+    },
+    {
+      "name": "Zakaron",
+      "lvl": 70,
+      "location": "Catacomb of Witch",
+     "respTime": 12
+    },
+    {
+      "name": "Meanas Anor",
+      "lvl": 70,
+      "location": "Blazing Swamp",
+     "respTime": 12
+    },
+    {
+      "name": "von Hellmann",
+      "lvl": 71,
+      "location": "Cursed Village",
+     "respTime": 12
+    },
+    {
+      "name": "Immortal Mardil",
+      "lvl": 71,
+      "location": "2+ floor ToI",
+     "respTime": 12
+    },
+    {
+      "name": "Water Dragon Sheshark",
+      "lvl": 72,
+      "location": "2ой остров",
+     "respTime": 12
+    },
+    {
+      "name": "Kandra",
+      "lvl": 72,
+      "location": "Varka",
+     "respTime": 12
+    },
+    {
+      "name": "Tanatos",
+      "lvl": 72,
+      "location": "Ancient Battleground",
+     "respTime": 12
+    },
+    {
+      "name": "Flame of Splendor Barakiel",
+      "lvl": 72,
+      "location": "VoS",
+      "respTime": 3
+    },
+    {
+      "name": "Hallate (3 TOI)",
+      "lvl": 73,
+      "location": "3 floor ToI",
+      "respTime": 12
+    },
+    {
+      "name": "Plague Golem",
+      "lvl": 73,
+      "location": "Wall of Argos",
+      "respTime": 12
+    },
+    {
+      "name": "Cloe",
+      "lvl": 74,
+      "location": "LoA 2ой нобл порт",
+      "respTime": 12
+    },
+    {
+      "name": "Sobekk",
+      "lvl": 74,
+      "location": "3ий остров",
+      "respTime": 12
+    },
+    {
+      "name": "Bumbalump",
+      "lvl": 74,
+      "location": "вызовной Hot Springs",
+      "respTime": 12
+    },
+    {
+      "name": "Kernon",
+      "lvl": 75,
+      "location": "8 floor ToI",
+      "respTime": 12
+    },
+    {
+      "name": "Naga",
+      "lvl": 75,
+      "location": "Blazing Swamp",
+      "respTime": 12
+    },
+    {
+      "name": "Olkuth",
+      "lvl": 75,
+      "location": "Silent Valley",
+      "respTime": 12
+    },
+    {
+      "name": "Palatanos of Horrific Power",
+      "lvl": 75,
+      "location": "Дерево - Blazing Swamp",
+      "respTime": 12
+    },
+    {
+      "name": "Decarbia",
+      "lvl": 75,
+      "location": "Seal of Shilen",
+      "respTime": 12
+    },
+    {
+      "name": "Ipos",
+      "lvl": 75,
+      "location": "Blazing Swamp",
+      "respTime": 12
+    },
+    {
+      "name": "Shax",
+      "lvl": 75,
+      "location": "Disciples Necropolis",
+      "respTime": 12
+    },
+    {
+      "name": "Flamestone Giant",
+      "lvl": 76,
+      "location": "картошка - Blazing Swamp",
+      "respTime": 12
+    },
+    {
+      "name": "Ashakiel",
+      "lvl": 76,
+      "location": "4ый остров",
+      "respTime": 12
+    },
+    {
+      "name": "Shuriel",
+      "lvl": 78,
+      "location": "11 TOI",
+      "respTime": 12
+    },
+    {
+      "name": "Glaki",
+      "lvl": 78,
+      "location": "Silent Valley",
+      "respTime": 12
+    },
+    {
+      "name": "Hestia",
+      "lvl": 78,
+      "location": "Hot Springs",
+      "respTime": 12
+    },
+    {
+      "name": "Golkonda",
+      "lvl": 79,
+      "location": "11 TOI",
+      "respTime": 12
+    },
+    {
+      "name": "Galaxia",
+      "lvl": 79,
+      "location": "13 TOI",
+      "respTime": 12
+    },
+    {
+      "name": "Queen Shyeed",
+      "lvl": 80,
+      "location": "Stokato Nest",
+      "respTime": 12
+    },
+    {
+      "name": "Ketra Hero Hekaton",
+      "lvl": 80,
+      "location": "Ketra Entarance",
+      "respTime": 6
+    },
+    {
+      "name": "Varka Hero Shadith",
+      "lvl": 80,
+      "location": "Varka Center",
+      "respTime": 6
+    },
+    {
+      "name": "Ketra Chief Brakki",
+      "lvl": 80,
+      "location": "Ketra Village",
+      "respTime": 12
+    },
+    {
+      "name": "Varka Chief Horus",
+      "lvl": 80,
+      "location": "Varka Village",
+      "respTime": 12
+    },
+    {
+      "name": "Ketra Commander Tayr",
+      "lvl": 84,
+      "location": "Ketra Village",
+      "respTime": 6
+    },
+    {
+      "name": "Varka Commander Mos",
+      "lvl": 84,
+      "location": "Varka Village",
+      "respTime": 6
+    },
+    {
+      "name": "Ember",
+      "lvl": 85,
+      "location": "Lower lever FoG",
+      "respTime": 12
+    },
+    {
+      "name": "Uruka",
+      "lvl": 85,
+      "location": "Dino Island",
+      "respTime": 12
+    },
+    {
+      "name": "Andreas Van Halter",
+      "lvl": 80,
+      "location": "Rune. Pagan.",
+      "respTime": 12
+    },
+    {
+      "name": "Anais",
+      "lvl": 80,
+      "location": "Monastire of Silence",
+      "respTime": 12
+    }
+  ]
