@@ -1,7 +1,6 @@
-// import React from "react";
-import "./App.css";
 import Header from "./components/header";
-import RaidList from "./components/raid_list";
+import RaidList from "./screens/raid_list";
+import "./App.css";
 
 function App() {
   return (

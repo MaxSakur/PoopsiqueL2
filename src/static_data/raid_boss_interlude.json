@@ -3,7 +3,7 @@
       "name": "Cabrio",
       "lvl": 70,
       "location": "Seal of Shilen",
-     "respTime": 12
+      "respTime": 12
     },
     {
       "name": "Korim",
@@ -12,7 +12,7 @@
      "respTime": 12
     },
     {
-      "name": "Skylancer",
+      "name": "Roaring Skylancer",
       "lvl": 70,
       "location": "Дорога с колизея",
      "respTime": 12
@@ -24,7 +24,7 @@
      "respTime": 12
     },
     {
-      "name": "Palibati",
+      "name": "Palibati Queen Themis",
       "lvl": 70,
       "location": "Seal of Shilen",
      "respTime": 12
@@ -48,25 +48,25 @@
      "respTime": 12
     },
     {
-      "name": "von Hellmann",
+      "name": "Eilhalder Von Hellmann",
       "lvl": 71,
       "location": "Cursed Village",
      "respTime": 12
     },
     {
-      "name": "Immortal Mardil",
+      "name": "Immortal Savior Mardil",
       "lvl": 71,
       "location": "2+ floor ToI",
-     "respTime": 12
+      "respTime": 12
     },
     {
-      "name": "Water Dragon Sheshark",
+      "name": "Water Dragon Seer Sheshark",
       "lvl": 72,
       "location": "2ой остров",
      "respTime": 12
     },
     {
-      "name": "Kandra",
+      "name": "Vanor Chief Kandra",
       "lvl": 72,
       "location": "Varka",
      "respTime": 12
@@ -84,7 +84,7 @@
       "respTime": 3
     },
     {
-      "name": "Hallate (3 TOI)",
+      "name": "Death Lord Hallate",
       "lvl": 73,
       "location": "3 floor ToI",
       "respTime": 12
@@ -102,13 +102,13 @@
       "respTime": 12
     },
     {
-      "name": "Sobekk",
+      "name": "Krokian Padisha Sobekk",
       "lvl": 74,
       "location": "3ий остров",
       "respTime": 12
     },
     {
-      "name": "Bumbalump",
+      "name": "Icicle Emperor Bumbalump",
       "lvl": 74,
       "location": "вызовной Hot Springs",
       "respTime": 12
@@ -120,13 +120,13 @@
       "respTime": 12
     },
     {
-      "name": "Naga",
+      "name": "Storm Winged Naga",
       "lvl": 75,
       "location": "Blazing Swamp",
       "respTime": 12
     },
     {
-      "name": "Olkuth",
+      "name": "Last Lesser Giant Olkuth",
       "lvl": 75,
       "location": "Silent Valley",
       "respTime": 12
@@ -144,13 +144,13 @@
       "respTime": 12
     },
     {
-      "name": "Ipos",
+      "name": "Death Lord Ipos",
       "lvl": 75,
       "location": "Blazing Swamp",
       "respTime": 12
     },
     {
-      "name": "Shax",
+      "name": "Death Lord Shax",
       "lvl": 75,
       "location": "Disciples Necropolis",
       "respTime": 12
@@ -162,19 +162,19 @@
       "respTime": 12
     },
     {
-      "name": "Ashakiel",
+      "name": "Ocean Flame Ashakiel",
       "lvl": 76,
       "location": "4ый остров",
       "respTime": 12
     },
     {
-      "name": "Shuriel",
+      "name": "Fire Of Wrath Shuriel",
       "lvl": 78,
       "location": "11 TOI",
       "respTime": 12
     },
     {
-      "name": "Glaki",
+      "name": "Last Lesser Giant Glaki",
       "lvl": 78,
       "location": "Silent Valley",
       "respTime": 12
@@ -225,6 +225,12 @@
       "name": "Varka Chief Horus",
       "lvl": 80,
       "location": "Varka Village",
+      "respTime": 12
+    },
+    {
+      "name": "Sailren",
+      "lvl": 80,
+      "location": "Dino Island",
       "respTime": 12
     },
     {

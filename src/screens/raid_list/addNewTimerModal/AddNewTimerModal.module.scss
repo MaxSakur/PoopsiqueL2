@@ -1,0 +1,80 @@
+.button {
+    position: absolute;
+    border: 1px solid;
+    border-radius: 100%;
+    bottom: 50px;
+    right: 50px;
+}
+
+.modal_container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    border-radius: 12px;
+    width: 400px;
+    height: 200px;
+    background-color: #fff;
+    gap: 12px;
+}
+.activeContainer {
+    display: flex;
+    flex: 1;
+    & .image {
+        height: 140px;
+    }
+    & .activeItemInfoContainer {
+        display: flex;
+        text-align: left;
+        flex-direction: column;
+        flex: 1;
+        padding: 0 12px;
+        justify-content: space-around;
+        & .name {
+            font-size: 16px;
+        }
+        & .location {
+            font-size: 16px;
+            color: #9c9c9c;
+            font-weight: 400;
+        }
+        & input[type="time"]{
+            padding: 4px 8px;
+            &::-webkit-calendar-picker-indicator {
+                filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
+            }
+        }
+        & .buttons {
+            display: flex;
+            gap: 12px;
+            & button {
+                flex: 1;
+                padding: 4px 8px;
+                border: none;
+                font-weight: bold;
+                &:hover{
+                    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+                    cursor: pointer;
+                }
+                &:first-child {
+                    background-color: lightgray;
+                }
+                &:last-child {
+                    background-color: green;
+                }
+            }
+        }
+    }
+}
