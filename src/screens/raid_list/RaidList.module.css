@@ -3,13 +3,13 @@
     flex-direction: row;
     padding: 12px 48px;
     gap: 48px;
+    align-items: flex-start;
 }
 
 .raidList {
     display: flex;
     flex-direction: column;
     flex: 1;
-    /* padding: 0 8px; */
 }
 
 .raidList_item {
@@ -44,4 +44,10 @@
 
 .raidList_img {
     height: 100px;
+}
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
 }

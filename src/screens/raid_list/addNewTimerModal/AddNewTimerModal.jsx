@@ -1,10 +1,9 @@
-import moment from "moment";
 import Select from "react-select";
 import { useMemo, useState, useEffect, useCallback } from "react";
 import { FaPlus } from "react-icons/fa";
-import { generatePathByName } from "../../../images";
 import styles from "./AddNewTimerModal.module.css";
-import { RAID_BOSS_DATA } from "../RaidList";
+import RaidBossCard from "../../../components/raidBossCard";
+import Icon from "../../../components/button";
 
 const selectFont = {
   fontSize: 14,
@@ -25,66 +24,34 @@ const colourStyles = {
   },
 };
 
-const AddNewTimerModal = ({
-  data,
-  value,
-  onChangeData,
-  onChangeActiveItem,
-}) => {
+const AddNewTimerModal = ({ data, value, onSuccess, onChangeActiveItem }) => {
   const [modalOpen, changeModalOpen] = useState(false);
-  const [respawnTimer, changeRespawnTimer] = useState(data);
+  const [respawnTimer, changeRespawnTimer] = useState("");
 
   const toggleModal = () => {
     changeModalOpen(!modalOpen);
     // onChangeActiveItem(null);
   };
 
-  const updateListWithTime = (el) => {
-    if (moment(respawnTimer, "HH:mm").isValid()) {
-      const currentBoss = data.filter((boss) => boss.name === el.value);
-
-      const currentBossWithTime = {
-        ...currentBoss[0],
-        time: moment(respawnTimer, "HH:mm").format("x"),
-      };
-
-      const cachedRaidBossData =
-        localStorage.getItem(RAID_BOSS_DATA) &&
-        JSON.parse(localStorage.getItem(RAID_BOSS_DATA));
-
-      const previousData = () => {
-        if (cachedRaidBossData === null) {
-          return [currentBossWithTime];
-        } else if (cachedRaidBossData.length > 0) {
-          return [
-            ...cachedRaidBossData.filter((el) => el.name !== currentBoss.name),
-            currentBossWithTime,
-          ];
-        }
-      };
-      localStorage.setItem(RAID_BOSS_DATA, JSON.stringify(previousData()));
-    }
-  };
-
   const handleAddListenedItem = () => {
-    updateListWithTime(value);
+    onSuccess(value, respawnTimer);
     toggleModal();
     onChangeActiveItem(null);
+    changeRespawnTimer("");
   };
 
   const handleClearTime = () => {
     toggleModal();
+    onChangeActiveItem(null);
   };
 
   const rbData = useMemo(() => {
     let updatedForSelectData = [];
     data.map((el) =>
       updatedForSelectData.push({
+        ...el,
         value: el.name,
         label: el.name,
-        lvl: el.lvl,
-        location: el.location,
-        respTime: el.respTime,
       })
     );
     return updatedForSelectData;
@@ -100,17 +67,15 @@ const AddNewTimerModal = ({
   }, []);
 
   useEffect(() => {
-    document.addEventListener("keydown", escFunction, false);
+    document.addEventListener("keydown", escFunction);
     return () => {
-      document.removeEventListener("keydown", escFunction, false);
+      document.removeEventListener("keydown", escFunction);
     };
   }, [escFunction]);
 
   return (
     <>
-      <button onClick={toggleModal}>
-        <FaPlus />
-      </button>
+      <Icon icon={<FaPlus />} onClick={toggleModal} />
       {modalOpen && (
         <div className={styles.modal_container}>
           <div className={styles.overlay} />
@@ -121,21 +86,11 @@ const AddNewTimerModal = ({
               onChange={(el) => onChangeActiveItem(el)}
               // onChange={(el) => changevalue(el)}
             />
-            {value && (
-              <div className={styles.activeContainer}>
-                <img
-                  className={styles.image}
-                  src={generatePathByName(value.value)}
-                  alt={`${value.value} portrait`}
-                />
-                <div className={styles.valueInfoContainer}>
-                  <div>
-                    <p className={styles.name}>
-                      {value.label}, {value.lvl} lvl
-                    </p>
-                    <p className={styles.location}>{value.location}</p>
-                  </div>
 
+            {value && (
+              <RaidBossCard
+                value={value}
+                content={
                   <input
                     type="time"
                     className={styles.timeInput}
@@ -143,18 +98,15 @@ const AddNewTimerModal = ({
                     onChange={(event) => {
                       changeRespawnTimer(event.target.value);
                     }}
-                    onBlur={() => {
-                      updateListWithTime(value);
-                      changeRespawnTimer("");
+                    onBlur={(event) => {
+                      onSuccess();
+                      changeRespawnTimer(event.target.value);
                     }}
                   />
-
-                  <div className={styles.buttons}>
-                    <button onClick={handleClearTime}>Close</button>
-                    <button onClick={handleAddListenedItem}>Add</button>
-                  </div>
-                </div>
-              </div>
+                }
+                onSuccess={handleAddListenedItem}
+                onReject={handleClearTime}
+              />
             )}
           </div>
         </div>

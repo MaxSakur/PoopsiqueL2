@@ -3,79 +3,93 @@
       "name": "Cabrio",
       "lvl": 70,
       "location": "Seal of Shilen",
-      "respTime": 12
+      "respTime": 12,
+      "drop": [
+      ]
     },
     {
       "name": "Korim",
       "lvl": 70,
       "location": "7 floor ToI",
-     "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Roaring Skylancer",
       "lvl": 70,
       "location": "Дорога с колизея",
-     "respTime": 12
+     "respTime": 12,
+      "drop": []
     },
     {
       "name": "Lokness",
       "lvl": 70,
       "location": "1ый остров",
-     "respTime": 12
+     "respTime": 12,
+      "drop": []
     },
     {
       "name": "Palibati Queen Themis",
       "lvl": 70,
       "location": "Seal of Shilen",
-     "respTime": 12
+     "respTime": 12,
+      "drop": []
     },
     {
       "name": "Behemoth",
       "lvl": 70,
       "location": "Варка",
-     "respTime": 12
+     "respTime": 12,
+      "drop": []
     },
     {
       "name": "Zakaron",
       "lvl": 70,
       "location": "Catacomb of Witch",
-     "respTime": 12
+     "respTime": 12,
+      "drop": []
     },
     {
       "name": "Meanas Anor",
       "lvl": 70,
       "location": "Blazing Swamp",
-     "respTime": 12
+     "respTime": 12,
+      "drop": []
     },
     {
       "name": "Eilhalder Von Hellmann",
       "lvl": 71,
       "location": "Cursed Village",
-     "respTime": 12
+     "respTime": 12,
+      "drop": []
     },
     {
       "name": "Immortal Savior Mardil",
       "lvl": 71,
       "location": "2+ floor ToI",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Water Dragon Seer Sheshark",
       "lvl": 72,
       "location": "2ой остров",
-     "respTime": 12
+     "respTime": 12,
+      "drop": []
     },
     {
       "name": "Vanor Chief Kandra",
       "lvl": 72,
       "location": "Varka",
-     "respTime": 12
+     "respTime": 12,
+      "drop": []
     },
     {
       "name": "Tanatos",
       "lvl": 72,
       "location": "Ancient Battleground",
-     "respTime": 12
+     "respTime": 12,
+      "drop": []
     },
     {
       "name": "Flame of Splendor Barakiel",
@@ -87,121 +101,143 @@
       "name": "Death Lord Hallate",
       "lvl": 73,
       "location": "3 floor ToI",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Plague Golem",
       "lvl": 73,
       "location": "Wall of Argos",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Cloe",
       "lvl": 74,
       "location": "LoA 2ой нобл порт",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Krokian Padisha Sobekk",
       "lvl": 74,
       "location": "3ий остров",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Icicle Emperor Bumbalump",
       "lvl": 74,
       "location": "вызовной Hot Springs",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Kernon",
       "lvl": 75,
       "location": "8 floor ToI",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Storm Winged Naga",
       "lvl": 75,
       "location": "Blazing Swamp",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Last Lesser Giant Olkuth",
       "lvl": 75,
       "location": "Silent Valley",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Palatanos of Horrific Power",
       "lvl": 75,
       "location": "Дерево - Blazing Swamp",
-      "respTime": 12
+      "respTime": 12,
+      "drop": [
+
+      ]
     },
     {
-      "name": "Decarbia",
+      "name": "Decabria",
       "lvl": 75,
       "location": "Seal of Shilen",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Death Lord Ipos",
       "lvl": 75,
       "location": "Blazing Swamp",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Death Lord Shax",
       "lvl": 75,
       "location": "Disciples Necropolis",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Flamestone Giant",
       "lvl": 76,
       "location": "картошка - Blazing Swamp",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Ocean Flame Ashakiel",
       "lvl": 76,
       "location": "4ый остров",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Fire Of Wrath Shuriel",
       "lvl": 78,
       "location": "11 TOI",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Last Lesser Giant Glaki",
       "lvl": 78,
       "location": "Silent Valley",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Hestia",
       "lvl": 78,
       "location": "Hot Springs",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Golkonda",
       "lvl": 79,
       "location": "11 TOI",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Galaxia",
       "lvl": 79,
       "location": "13 TOI",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Queen Shyeed",
       "lvl": 80,
       "location": "Stokato Nest",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Ketra Hero Hekaton",
@@ -219,19 +255,22 @@
       "name": "Ketra Chief Brakki",
       "lvl": 80,
       "location": "Ketra Village",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Varka Chief Horus",
       "lvl": 80,
       "location": "Varka Village",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Sailren",
       "lvl": 80,
       "location": "Dino Island",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Ketra Commander Tayr",
@@ -249,24 +288,28 @@
       "name": "Ember",
       "lvl": 85,
       "location": "Lower lever FoG",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Uruka",
       "lvl": 85,
       "location": "Dino Island",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Andreas Van Halter",
       "lvl": 80,
       "location": "Rune. Pagan.",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     },
     {
       "name": "Anais",
       "lvl": 80,
       "location": "Monastire of Silence",
-      "respTime": 12
+      "respTime": 12,
+      "drop": []
     }
   ]

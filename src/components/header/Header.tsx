@@ -15,7 +15,7 @@ export const Header = () => {
     <div className={styles.header}>
       <p>Ave, Poopsique</p>
       <img src={logo} alt="" />
-      <p>Сейчас: {currentTime}</p>
+      <p>{currentTime}</p>
     </div>
   );
 };

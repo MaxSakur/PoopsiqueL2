@@ -3,21 +3,25 @@ import styles from "./RaidList.module.css";
 import moment from "moment";
 import Column from "../../components/column";
 import AddNewTimerModal from "./addNewTimerModal";
-import raidBossData from "../../static_data/raid_boss_interlude.json";
+import staticRaidBossData from "../../static_data/raid_boss_interlude.json";
+import RaidBossCard from "../../components/raidBossCard";
+import { clearCachedData, updateCachedRaidBossList } from "./raidListHelpers";
+import { HiRefresh } from "react-icons/hi";
+import Icon from "../../components/button";
 export const RAID_BOSS_DATA = "raid_boss_data";
 // SOUNDS
 let move = new Audio();
 move.src = "https://www.dropbox.com/s/fiyx4q2mdwynraj/FF7CursorMove.mp3?raw=1";
 
 export const RaidList = () => {
-  const [raidBossList, updateRaidBossList] = useState(raidBossData);
+  const [raidBossList, updateRaidBossList] = useState(staticRaidBossData);
   const cachedRaidBossData =
     localStorage.getItem(RAID_BOSS_DATA) &&
     JSON.parse(localStorage.getItem(RAID_BOSS_DATA));
   const [activeItem, changeActiveItem] = useState();
   const [loading, changeLoading] = useState(false);
   const [respownedBoss, changeRespownedBoss] = useState([]);
-
+  moment.locale("ru");
   const nowMS = moment().format("HH:mm");
 
   const generateNextRespTime = (el) => {
@@ -32,6 +36,7 @@ export const RaidList = () => {
           ...respownedBoss.filter((item) => item.name !== el.name),
           el,
         ]);
+        removeRespownItem(el.name);
         move.play();
       }
       return null;
@@ -40,7 +45,7 @@ export const RaidList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
-  const removeCurrentItem = (name) => {
+  const removeRespownItem = (name) => {
     localStorage.setItem(
       RAID_BOSS_DATA,
       JSON.stringify(cachedRaidBossData.filter((el) => el.name !== name))
@@ -54,6 +59,25 @@ export const RaidList = () => {
       : [...prev, el];
   }, []);
 
+  const refreshBossTimer = (boss) => {};
+
+  const handleClearCachedData = () => {
+    clearCachedData();
+    changeLoading(!loading);
+  };
+
+  const removeRespownedBoss = (boss) => {
+    changeRespownedBoss(respownedBoss.filter((el) => el.name !== boss.name));
+  };
+
+  const addNewCachebleItem = (el, time) => {
+    el && updateCachedRaidBossList(el, time);
+  };
+
+  const restOfTime = ({ time }) => {
+    return moment(time, "x").toNow();
+  };
+
   return (
     <div className={styles.mainContainer}>
       <Column
@@ -61,16 +85,20 @@ export const RaidList = () => {
         bodyContent={<p>В процессе разработки</p>}
       />
       <Column
+        iconLeft={<Icon icon={<HiRefresh />} onClick={handleClearCachedData} />}
+        iconRight={
+          <AddNewTimerModal
+            data={updatedRaidBossList}
+            value={activeItem}
+            onSuccess={addNewCachebleItem}
+            onChangeData={updateRaidBossList}
+            onChangeActiveItem={changeActiveItem}
+          />
+        }
         headContent={
-          <h2>
-            Очередь респауна
-            <AddNewTimerModal
-              data={updatedRaidBossList}
-              value={activeItem}
-              onChangeData={updateRaidBossList}
-              onChangeActiveItem={changeActiveItem}
-            />
-          </h2>
+          <div className={styles.row}>
+            <h2>Очередь респауна</h2>
+          </div>
         }
         bodyContent={
           cachedRaidBossData &&
@@ -86,14 +114,16 @@ export const RaidList = () => {
                   <li key={index} className={styles.raidList_item}>
                     <button
                       className={styles.removeButton}
-                      onClick={() => removeCurrentItem(el.name)}
+                      onClick={() => removeRespownItem(el.name)}
                     >
                       х
                     </button>
                     <p className={styles.raidList_item_name}>{el.name}</p>
                     <p className={styles.raidList_item_label}>
+                      Время респа: {"   "}
                       {generateNextRespTime(el)}
                     </p>
+                    <p>Через: {restOfTime(el)}</p>
                   </li>
                 );
               } else {
@@ -110,9 +140,11 @@ export const RaidList = () => {
             {respownedBoss &&
               respownedBoss?.map((el) => {
                 return (
-                  <div className={styles.respawn}>
-                    <h3>{el.name}</h3>
-                  </div>
+                  <RaidBossCard
+                    value={el}
+                    onSuccess={refreshBossTimer}
+                    onReject={removeRespownedBoss}
+                  />
                 );
               })}
           </ul>
