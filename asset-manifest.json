@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/PoopsiqueL2/static/css/main.421600d3.css",
-    "main.js": "/PoopsiqueL2/static/js/main.8b2f258a.js",
+    "main.js": "/PoopsiqueL2/static/js/main.39a7c319.js",
     "static/js/787.1fa64d31.chunk.js": "/PoopsiqueL2/static/js/787.1fa64d31.chunk.js",
     "static/media/Queen Shyeed.jpg": "/PoopsiqueL2/static/media/Queen Shyeed.3cf0d6ec87937032eaa7.jpg",
     "static/media/Plague Golem.jpg": "/PoopsiqueL2/static/media/Plague Golem.6fc1535530e2a0fcec54.jpg",
@@ -50,11 +50,11 @@
     "static/media/L2logo.png": "/PoopsiqueL2/static/media/L2logo.f8431d2823f31bd20a70.png",
     "index.html": "/PoopsiqueL2/index.html",
     "main.421600d3.css.map": "/PoopsiqueL2/static/css/main.421600d3.css.map",
-    "main.8b2f258a.js.map": "/PoopsiqueL2/static/js/main.8b2f258a.js.map",
+    "main.39a7c319.js.map": "/PoopsiqueL2/static/js/main.39a7c319.js.map",
     "787.1fa64d31.chunk.js.map": "/PoopsiqueL2/static/js/787.1fa64d31.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.421600d3.css",
-    "static/js/main.8b2f258a.js"
+    "static/js/main.39a7c319.js"
   ]
 }
