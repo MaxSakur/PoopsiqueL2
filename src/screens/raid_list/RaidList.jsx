@@ -74,8 +74,14 @@ export const RaidList = () => {
     el && updateCachedRaidBossList(el, time);
   };
 
-  const restOfTime = ({ time }) => {
-    return moment(time, "x").toNow();
+  const restOfTime = ({ time, respTime }) => {
+    // MOS "1676279460000"
+    // CABRIO "1676279460000"
+    // console.log(time, respTime);
+    // console.log("1", moment("1676279460000", "x").add(respTime, "hours"));
+    console.log("через 6", moment(time, "x").add(6, "h").format("HH:mm"));
+    console.log("через 12", moment(time, "x").add(12, "h").format("HH:mm"));
+    return moment(time, "x").add(respTime, "hours").toNow();
   };
 
   return (
@@ -106,12 +112,14 @@ export const RaidList = () => {
           cachedRaidBossData
             .filter((el) => el.time)
             .sort((a, b) => {
+              console.log(cachedRaidBossData, a, b);
               return a["time"] - b["time"];
             })
             .map((el, index) => {
               if (el.time) {
                 return (
                   <li key={index} className={styles.raidList_item}>
+                    {/* {console.log(el)} */}
                     <button
                       className={styles.removeButton}
                       onClick={() => removeRespownItem(el.name)}
