@@ -80,7 +80,7 @@ const AddNewTimerModal = ({
 
   return (
     <>
-      <Icon icon={<FaPlus />} onClick={toggleModal} />
+      <Icon color={"green"} icon={<FaPlus />} onClick={toggleModal} />
       {modalOpen && (
         <div className={styles.modal_container}>
           <div className={styles.overlay} />
@@ -104,7 +104,6 @@ const AddNewTimerModal = ({
                       changeRespawnTimer(event.target.value);
                     }}
                     onBlur={(event) => {
-                      onSuccess();
                       changeRespawnTimer(event.target.value);
                     }}
                   />

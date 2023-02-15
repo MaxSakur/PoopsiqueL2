@@ -66,8 +66,9 @@
       -ms-flex: 1;
           flex: 1;
   padding: 0 12px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .activeContainer .valueInfoContainer .name {
@@ -125,14 +126,8 @@
   display: flex;
   padding: 20px;
   border-radius: 100%;
-  background-color: green;
-  border: 1px solid lightgray;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-}
-
-.addButton svg {
-  fill: #fff;
 }
 
 .addButton:hover {

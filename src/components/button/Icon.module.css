@@ -10,7 +10,6 @@
           align-items: center;
   justify-items: center;
   border-radius: 100%;
-  border: 1px solid lightgray;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   height: 40px;
@@ -18,7 +17,6 @@
 }
 
 .container svg {
-  fill: #fff;
   height: 30px;
   width: 30px;
 }

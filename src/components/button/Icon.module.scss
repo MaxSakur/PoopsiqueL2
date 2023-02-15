@@ -4,12 +4,10 @@
     align-items: center;
     justify-items: center;
     border-radius: 100%;
-    border: 1px solid lightgray;
     transition: all 0.2s ease;
     height: 40px;
     width: 40px;
     & svg {
-        fill: #fff;
         height: 30px;
         width: 30px;
     }

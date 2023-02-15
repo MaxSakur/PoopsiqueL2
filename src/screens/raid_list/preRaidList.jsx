@@ -6,9 +6,9 @@ import AddNewTimerModal from "./addNewTimerModal";
 import staticRaidBossData from "../../static_data/raid_boss_interlude.json";
 import RaidBossCard from "../../components/raidBossCard";
 import {
+  DEFAULT_TIME_FORMAT,
   cachedRaidBossData,
-  clearCachedData,
-  generateNextRespTime,
+  convertNextRespToMs,
   removeRespownItem,
   removeRespownedBoss,
   restOfTime,
@@ -25,18 +25,19 @@ export const RaidList = () => {
   const [activeItem, changeActiveItem] = useState();
   const [respownedBoss, changeRespownedBoss] = useState([]);
   const [loading, changeLoading] = useState(false);
-  const nowMS = moment().format("HH:mm");
+  const nowMS = moment().format(DEFAULT_TIME_FORMAT);
 
   const getCachedRaidBossList = useMemo(() => {
     return localStorage.getItem(RAID_BOSS_DATA)
       ? localStorage.getItem(RAID_BOSS_DATA)
       : [];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [respownedBoss]);
 
   useEffect(() => {
     if (getCachedRaidBossList) {
       getCachedRaidBossList?.map((el) => {
-        if (generateNextRespTime(el) === nowMS) {
+        if (convertNextRespToMs(el) === nowMS) {
           changeRespownedBoss([
             ...respownedBoss.filter((item) => item.name !== el.name),
             el,
@@ -116,7 +117,7 @@ export const RaidList = () => {
                     <p className={styles.raidList_item_name}>{el.name}</p>
                     <p className={styles.raidList_item_label}>
                       Время респа: {"   "}
-                      {generateNextRespTime(el)}
+                      {convertNextRespToMs(el)}
                     </p>
                     <p>Через: {restOfTime(el)}</p>
                   </li>
