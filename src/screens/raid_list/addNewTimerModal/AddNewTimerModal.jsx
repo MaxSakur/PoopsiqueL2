@@ -4,6 +4,7 @@ import { FaPlus } from "react-icons/fa";
 import styles from "./AddNewTimerModal.module.css";
 import RaidBossCard from "../../../components/raidBossCard";
 import Icon from "../../../components/button";
+import staticRaidBossData from "./../../../static_data/raid_boss_interlude.json";
 
 const selectFont = {
   fontSize: 14,
@@ -24,13 +25,17 @@ const colourStyles = {
   },
 };
 
-const AddNewTimerModal = ({ data, value, onSuccess, onChangeActiveItem }) => {
+const AddNewTimerModal = ({
+  data = staticRaidBossData,
+  value,
+  onSuccess,
+  onChangeActiveItem,
+}) => {
   const [modalOpen, changeModalOpen] = useState(false);
   const [respawnTimer, changeRespawnTimer] = useState("");
 
   const toggleModal = () => {
     changeModalOpen(!modalOpen);
-    // onChangeActiveItem(null);
   };
 
   const handleAddListenedItem = () => {
@@ -45,7 +50,7 @@ const AddNewTimerModal = ({ data, value, onSuccess, onChangeActiveItem }) => {
     onChangeActiveItem(null);
   };
 
-  const rbData = useMemo(() => {
+  const convertedDataForSelect = useMemo(() => {
     let updatedForSelectData = [];
     data.map((el) =>
       updatedForSelectData.push({
@@ -81,7 +86,7 @@ const AddNewTimerModal = ({ data, value, onSuccess, onChangeActiveItem }) => {
           <div className={styles.overlay} />
           <div className={styles.modal}>
             <Select
-              options={rbData}
+              options={convertedDataForSelect}
               styles={colourStyles}
               onChange={(el) => onChangeActiveItem(el)}
               // onChange={(el) => changevalue(el)}

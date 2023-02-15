@@ -1,34 +1,40 @@
 import moment from "moment";
-import { RAID_BOSS_DATA } from "./RaidList";
 import staticRaidBossData from "./../../static_data/raid_boss_interlude.json";
 
-export const updateCachedRaidBossList = (el, nextRespownTime) => {
-  if (moment(nextRespownTime, "HH:mm").isValid()) {
-    const currentBoss = staticRaidBossData.filter(
-      (boss) => boss.name === el.name
-    );
+export const RAID_BOSS_DATA = "raid_boss_data";
 
+export const findBossByName = ({ name }) => {
+  return staticRaidBossData.filter((boss) => boss.name === name);
+};
+export const generateNextRespTime = (el) => {
+  const { time, respTime } = el;
+  return moment(time, "x").add(respTime, "hours").format("HH:mm");
+};
+
+export const calculateBossNextRespown = (time) => {
+  const currentDateTime = moment();
+  const res = moment(time, "HH:mm");
+  const nextRespownTime =
+    res.diff(currentDateTime, "m") < 0
+      ? moment(time, "HH:mm").add(-1, "days").format("x")
+      : moment(time, "HH:mm").format("x");
+  return nextRespownTime;
+};
+
+// WORKING
+export const getItemWithRespownTime = (el, nextRespownTime) => {
+  if (moment(nextRespownTime, "HH:mm").isValid()) {
+    const currentBoss = findBossByName(el);
     const currentBossWithTime = {
       ...currentBoss[0],
-      time: moment(nextRespownTime, "HH:mm").format("x"),
+      time: calculateBossNextRespown(nextRespownTime),
     };
-
-    const cachedRaidBossData =
-      localStorage.getItem(RAID_BOSS_DATA) &&
-      JSON.parse(localStorage.getItem(RAID_BOSS_DATA));
-
-    const previousData = () => {
-      if (cachedRaidBossData === null) {
-        return [currentBossWithTime];
-      } else if (cachedRaidBossData.length > 0) {
-        return [
-          ...cachedRaidBossData.filter((el) => el.name !== currentBoss.name),
-          currentBossWithTime,
-        ];
-      }
-    };
-    localStorage.setItem(RAID_BOSS_DATA, JSON.stringify(previousData()));
+    return currentBossWithTime;
   }
 };
 
-export const clearCachedData = () => localStorage.removeItem(RAID_BOSS_DATA);
+export const restOfTime = ({ time, respTime }) => {
+  return moment(time, "x").add(respTime, "hours").toNow();
+};
+
+export const clearAllCachedData = () => localStorage.removeItem(RAID_BOSS_DATA);
