@@ -1,6 +1,7 @@
 import moment from "moment";
 import staticRaidBossData from "./../../static_data/raid_boss_interlude.json";
 
+export const RAID_BOSS_SPOWN_DELAY = "raid_boss_spown_delay";
 export const RAID_BOSS_DATA = "raid_boss_data";
 export const RESPOWNED_DATA = "respowned_data";
 export const DEFAULT_TIME_FORMAT = "HH:mm";
@@ -18,23 +19,12 @@ export const convertMsToTime = (ms) =>
   moment(ms, "x").format(EXTENDED_TIME_FORMAT);
 
 export const convertNextRespToMs = (boss, nextResp) => {
-  const { respTime } = boss;
-  const now = moment();
-  const next = moment(nextResp, DEFAULT_TIME_FORMAT);
-
+  const respowns = JSON.parse(localStorage.getItem(RAID_BOSS_SPOWN_DELAY));
   const addDefaultRespown = moment(nextResp, DEFAULT_TIME_FORMAT).add(
-    respTime,
+    respowns[boss.type],
     "hours"
   );
-
-  const checkPreviousDate = () => {
-    if (next.diff(now, "hours", true) > 0) {
-      return addDefaultRespown.add(-1, "days").format("x");
-    }
-    return addDefaultRespown.format("x");
-  };
-
-  return nextResp && checkPreviousDate();
+  return nextResp && addDefaultRespown.format("x");
 };
 
 export const restOfTime = ({ time }) => {
@@ -59,5 +49,27 @@ export const getItemWithRespownTime = (el, nextRespownTime) => {
     return currentBossWithTime;
   }
 };
+
+export const getMaxRespTime = (el, timeCount = "seconds") => {
+  const respowns = JSON.parse(localStorage.getItem(RAID_BOSS_SPOWN_DELAY));
+  const { time } = el;
+  const maxResp = moment(time, "x").add(respowns["random"], "hours");
+  return maxResp.diff(moment(), timeCount);
+};
+
+export const toTimeString = (seconds) => {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor(
+    hours !== 0 ? seconds / hours : Math.floor(seconds / 60)
+  );
+
+  if (hours === 0) {
+    return `00:${minutes}`;
+  }
+
+  return `${hours}: ${((seconds - hours * 3600) / 60).toFixed(0)}`;
+};
+
+export const generatePath = (str) => str.replace("npc", "loc");
 
 export const clearAllCachedData = () => localStorage.removeItem(RAID_BOSS_DATA);

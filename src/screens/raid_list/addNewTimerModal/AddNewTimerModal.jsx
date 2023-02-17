@@ -29,24 +29,25 @@ const AddNewTimerModal = ({
   data = staticRaidBossData,
   value,
   onSuccess,
+  modalOpen,
+  changeModalOpen,
   onChangeActiveItem,
 }) => {
-  const [modalOpen, changeModalOpen] = useState(false);
   const [respawnTimer, changeRespawnTimer] = useState("");
 
   const toggleModal = () => {
-    changeModalOpen(!modalOpen);
+    changeModalOpen();
   };
 
   const handleAddListenedItem = () => {
     onSuccess(value, respawnTimer);
-    toggleModal();
+    changeModalOpen();
     onChangeActiveItem(null);
     changeRespawnTimer("");
   };
 
-  const handleClearTime = () => {
-    toggleModal();
+  const handleClearCurrentAndCloseModal = () => {
+    changeModalOpen();
     onChangeActiveItem(null);
   };
 
@@ -65,7 +66,7 @@ const AddNewTimerModal = ({
 
   const escFunction = useCallback((event) => {
     if (event.key === "Escape") {
-      toggleModal(false);
+      handleClearCurrentAndCloseModal();
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -109,7 +110,7 @@ const AddNewTimerModal = ({
                   />
                 }
                 onSuccess={handleAddListenedItem}
-                onReject={handleClearTime}
+                onClose={handleClearCurrentAndCloseModal}
               />
             )}
           </div>

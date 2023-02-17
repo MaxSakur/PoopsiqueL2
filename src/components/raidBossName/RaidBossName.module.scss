@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    & .typeLvl {
+        color: #ff7b3d;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    & .name {
+        @extend .typeLvl;
+        color: #000;
+    }
+    & .label {
+        font-size: 16px;
+        font-weight: 100;
+        color: #898080;
+    }
+}

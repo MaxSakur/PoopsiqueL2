@@ -1,13 +1,12 @@
-import styles from "./RaidList.module.css";
+import { useMemo } from "react";
 import Column from "../../components/column";
 import Icon from "../../components/button";
 import { MdDeleteForever } from "react-icons/md";
+import { TbArrowBarToLeft, TbArrowBarToRight } from "react-icons/tb";
 import {
   RAID_BOSS_DATA,
   getItemWithRespownTime,
   clearAllCachedData,
-  restOfTime,
-  getRespownTime,
   currentTime,
   convertMsToTime,
   RESPOWNED_DATA,
@@ -15,6 +14,10 @@ import {
 import { useEffect, useState } from "react";
 import AddNewTimerModal from "./addNewTimerModal";
 import RaidBossCard from "../../components/raidBossCard";
+import ServerSettings from "../../components/spownDelay";
+import RespownList from "../../components/respownList";
+import staticRaidBossData from "./../../static_data/raid_boss_interlude.json";
+import styles from "./RaidList.module.css";
 
 // SOUNDS
 let move = new Audio();
@@ -25,10 +28,24 @@ export const RaidList = () => {
   const [respownedBoss, changeRespownedBoss] = useState([]);
   const [currentRBwithTime, changeCurrentRBwithTime] = useState();
   const [loading, changeLoading] = useState(false);
+  const [settingsOpen, changeSettingsOpen] = useState(true);
+  const [modalOpen, changeModalOpen] = useState(false);
+
+  const restOfRbList = useMemo(() => {
+    const result = staticRaidBossData.filter(
+      (rb) => !cachedDataWithTime.some((crb) => rb.name === crb.name)
+    );
+    return result;
+  }, [cachedDataWithTime]);
+
   // DELETE ALL CACHED RESP DATA
   const handleClearCachedData = () => {
     clearAllCachedData();
     changeCachedDataWithTime([]);
+  };
+
+  const handleChangeCurrentRaidBoss = (item) => {
+    changeCurrentRBwithTime(item);
   };
 
   // ADD NEW CACHED ITEM RESP DATA
@@ -64,10 +81,15 @@ export const RaidList = () => {
   }, []);
 
   // DELETE ONE ITEM FROM CACHED DATA
-  const removeRespownedBoss = (boss) => {
+  const removeRespowningBoss = (boss) => {
     changeCachedDataWithTime(
       cachedDataWithTime.filter((el) => el.name !== boss.name)
     );
+  };
+
+  // DELETE ONE ITEM FROM RESPOWNED DATA
+  const removeRespownedBoss = (boss) => {
+    changeRespownedBoss(respownedBoss.filter((el) => el.name !== boss.name));
   };
 
   // COUNTER CHECK
@@ -75,7 +97,7 @@ export const RaidList = () => {
     if (cachedDataWithTime) {
       cachedDataWithTime?.map((el) => {
         if (convertMsToTime(el.time) === currentTime()) {
-          removeRespownedBoss(el);
+          removeRespowningBoss(el);
           changeRespownedBoss([
             ...respownedBoss.filter((item) => item.name !== el.name),
             el,
@@ -89,11 +111,27 @@ export const RaidList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
+  const toggleModeSettings = () => {
+    changeSettingsOpen(!settingsOpen);
+  };
+
+  const handleCloseModal = () => {
+    changeModalOpen(!modalOpen);
+  };
+
   return (
     <div className={styles.mainContainer}>
       <Column
+        iconRight={
+          <Icon
+            color={"lightgrey"}
+            icon={settingsOpen ? <TbArrowBarToLeft /> : <TbArrowBarToRight />}
+            onClick={toggleModeSettings}
+          />
+        }
+        isOpen={settingsOpen}
         headContent={<h2>Server settings</h2>}
-        // bodyContent={<p>В процессе разработки</p>}
+        bodyContent={<ServerSettings />}
       />
       <Column
         iconLeft={
@@ -105,9 +143,12 @@ export const RaidList = () => {
         }
         iconRight={
           <AddNewTimerModal
+            data={restOfRbList}
+            modalOpen={modalOpen}
+            changeModalOpen={handleCloseModal}
             value={currentRBwithTime}
             onSuccess={addNewCachebleItem}
-            onChangeActiveItem={changeCurrentRBwithTime}
+            onChangeActiveItem={handleChangeCurrentRaidBoss}
           />
         }
         headContent={
@@ -116,37 +157,10 @@ export const RaidList = () => {
           </div>
         }
         bodyContent={
-          <ul>
-            {cachedDataWithTime.length > 0
-              ? cachedDataWithTime
-                  .sort((a, b) => {
-                    return a["time"] - b["time"];
-                  })
-                  .map((el, index) => {
-                    if (el.time) {
-                      return (
-                        <li key={index} className={styles.raidList_item}>
-                          <Icon
-                            color={"red"}
-                            icon={<MdDeleteForever />}
-                            onClick={() => removeRespownedBoss(el)}
-                          />
-                          <p className={styles.raidList_item_name}>
-                            <span>{el.lvl}</span>, {el.name}
-                          </p>
-                          <div className={styles.raidList_item_respown}>
-                            <p>{restOfTime(el)}</p>
-                            <p className={styles.raidList_item_label}>
-                              {getRespownTime(el)}
-                            </p>
-                          </div>
-                        </li>
-                      );
-                    }
-                    return null;
-                  })
-              : null}
-          </ul>
+          <RespownList
+            data={cachedDataWithTime}
+            removeRespownedBoss={removeRespowningBoss}
+          />
         }
       />
 
@@ -159,9 +173,10 @@ export const RaidList = () => {
                 return (
                   <RaidBossCard
                     key={index}
+                    withBackTimer={true}
                     value={el}
-                    onSuccess={() => {}}
-                    onReject={removeRespownedBoss}
+                    // onSuccess={() => {}}
+                    onDeleteItem={removeRespownedBoss}
                   />
                 );
               })}

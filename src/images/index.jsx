@@ -1,7 +1,7 @@
 import Cabrio from "./Cabrio.jpg";
 import Korim from "./Korim.jpg";
 import RoaringSkylancer from "./Roaring Skylancer.jpg";
-import Lokness from "./Lokness.jpg";
+import FafurionsHeraldLokness from "./Fafurion's Herald Lokness.jpg";
 import PalibatiQueenThemis from "./Palibati Queen Themis.jpg";
 import Behemoth from "./Behemoth.jpg";
 import Zakaron from "./Zakaron.jpg";
@@ -10,7 +10,7 @@ import EilhalderVonHellmann from "./Eilhalder Von Hellmann.jpg";
 import ImmortalSaviorMardil from "./Immortal Savior Mardil.jpg";
 import WaterDragonSeerSheshark from "./Water Dragon Seer Sheshark.jpg";
 import VanorChiefKandra from "./Vanor Chief Kandra.jpg";
-import Tanatos from "./Tanatos.jpg";
+import DoomBladeTanatos from "./Tanatos.jpg";
 import FlameofSplendorBarakiel from "./Flame of Splendor Barakiel.jpg";
 import DeathLordHallate from "./Death Lord Hallate.jpg";
 import PlagueGolem from "./Plague Golem.jpg";
@@ -21,14 +21,14 @@ import Kernon from "./Kernon.jpg";
 import StormWingedNaga from "./Storm Winged Naga.jpg";
 import LastLesserGiantOlkuth from "./Last Lesser Giant Olkuth.jpg";
 import PalatanosofHorrificPower from "./Palatanos of Horrific Power.jpg";
-import Decarbia from "./Decarbia.jpg";
+import Decabria from "./Decabria.jpg";
 import DeathLordIpos from "./Death Lord Ipos.jpg";
 import DeathLordShax from "./Death Lord Shax.jpg";
 import FlamestoneGiant from "./Flamestone Giant.jpg";
 import OceanFlameAshakiel from "./Ocean Flame Ashakiel.jpg";
 import FireOfWrathShuriel from "./Fire Of Wrath Shuriel.jpg";
 import LastLesserGiantGlaki from "./Last Lesser Giant Glaki.jpg";
-import Hestia from "./Hestia.jpg";
+import HestiaGuardian from "./Hestia Guardian.jpg";
 import Golkonda from "./Golkonda.jpg";
 import Galaxia from "./Galaxia.jpg";
 import QueenShyeed from "./Queen Shyeed.jpg";
@@ -43,8 +43,22 @@ import Ember from "./Ember.jpg";
 import Uruka from "./Uruka.jpg";
 import AndreasVanHalter from "./Andreas Van Halter.jpg";
 import Anais from "./Anais.jpg";
+import BloodyPriestRudelto from "./Bloody Priest Rudelto.jpg";
+import DaimonTheWhiteEyed from "./Daimon The White-Eyed.jpg";
+import Lilith from "./Lilith.jpg";
+import Anakim from "./Anakim.jpg";
+import SoulOfFireNastron from "./Soul Of Fire Nastron.jpg";
+import SoulOfWaterAshutar from "./Soul Of Water Ashutar.jpg";
+import SpiritOfAndrasTheBetrayer from "./Spirit Of Andras The Betrayer.jpg";
 
 export const images = {
+  Anakim,
+  BloodyPriestRudelto,
+  DaimonTheWhiteEyed,
+  Lilith,
+  SoulOfFireNastron,
+  SoulOfWaterAshutar,
+  SpiritOfAndrasTheBetrayer,
   Anais,
   AndreasVanHalter,
   Uruka,
@@ -59,7 +73,7 @@ export const images = {
   QueenShyeed,
   Galaxia,
   Golkonda,
-  Hestia,
+  HestiaGuardian,
   LastLesserGiantGlaki,
   LastLesserGiantOlkuth,
   FireOfWrathShuriel,
@@ -68,7 +82,7 @@ export const images = {
   DeathLordIpos,
   FlamestoneGiant,
   DeathLordShax,
-  Decarbia,
+  Decabria,
   PalatanosofHorrificPower,
   StormWingedNaga,
   Kernon,
@@ -78,7 +92,7 @@ export const images = {
   Cloe,
   PlagueGolem,
   FlameofSplendorBarakiel,
-  Tanatos,
+  DoomBladeTanatos,
   VanorChiefKandra,
   WaterDragonSeerSheshark,
   ImmortalSaviorMardil,
@@ -86,7 +100,7 @@ export const images = {
   MeanasAnor,
   Zakaron,
   PalibatiQueenThemis,
-  Lokness,
+  FafurionsHeraldLokness,
   RoaringSkylancer,
   Korim,
   Cabrio,

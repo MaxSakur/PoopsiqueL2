@@ -1,0 +1,25 @@
+
+.raidList {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    &_item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 4px;
+        border-bottom: 1px solid #000;
+        padding-bottom: 4px;
+        gap: 12px;
+        &_respown {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        &_name {
+            flex: 1;
+            text-align: start;
+            color: #ff7b3d;
+        }
+    }
+}

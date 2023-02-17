@@ -6,6 +6,18 @@
   right: 50px;
 }
 
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 8px 8px 8px 0;
+}
+
+.counter {
+  color: #000;
+  font-weight: 700;
+}
+
 .modal_container {
   position: absolute;
   left: 0;
@@ -47,10 +59,17 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  gap: 16px;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .activeContainer .image {
   height: 140px;
+  width: 125px;
 }
 
 .activeContainer .valueInfoContainer {
@@ -65,20 +84,9 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  padding: 0 12px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.activeContainer .valueInfoContainer .name {
-  font-size: 16px;
-}
-
-.activeContainer .valueInfoContainer .location {
-  font-size: 16px;
-  color: #9c9c9c;
-  font-weight: 400;
 }
 
 .activeContainer .valueInfoContainer input[type="time"] {
@@ -95,6 +103,7 @@
   display: -ms-flexbox;
   display: flex;
   gap: 12px;
+  margin: 8px 0;
 }
 
 .activeContainer .valueInfoContainer .buttons button {
@@ -106,18 +115,15 @@
   font-weight: bold;
 }
 
+.activeContainer .valueInfoContainer .buttons button a {
+  text-decoration: none;
+  color: #000;
+}
+
 .activeContainer .valueInfoContainer .buttons button:hover {
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-}
-
-.activeContainer .valueInfoContainer .buttons button:first-child {
-  background-color: lightgray;
-}
-
-.activeContainer .valueInfoContainer .buttons button:last-child {
-  background-color: green;
 }
 
 .addButton {

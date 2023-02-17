@@ -1,4 +1,4 @@
-.container {
+.container, .container_closed {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,7 +18,9 @@
   overflow: hidden;
 }
 
-.container .head {
+.container .head, .container_closed .head {
+  padding: 0 12px;
+  background: #000;
   border-bottom: 1px solid lightgray;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -30,17 +32,16 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background: #000;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.container .head_content {
+.container .head_content, .container_closed .head_content {
   color: #fff;
 }
 
-.container .head_button {
+.container .head_button, .container_closed .head_button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,7 +54,44 @@
   width: 60px;
 }
 
-.container .body {
-  padding: 8px;
-  padding-top: 8px;
+.container .body, .container_closed .body {
+  padding: 16px 8px;
+}
+
+.container_closed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 280px;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  background: #000;
+}
+
+.container_closed .head_closed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container_closed .head_closed .head_content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.container_closed .head_closed .head_button {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }

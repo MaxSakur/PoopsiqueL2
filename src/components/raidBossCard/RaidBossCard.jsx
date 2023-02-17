@@ -1,8 +1,24 @@
 import React from "react";
 import styles from "./RaidBossCard.module.css";
 import { generatePathByName } from "../../images";
+import {
+  generatePath,
+  getMaxRespTime,
+  toTimeString,
+} from "../../screens/raid_list/raidListHelpers";
+import RaidBossName from "../raidBossName/RaidBossName";
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
-const RaidBossCard = ({ value, content, onSuccess, onReject }) => {
+const RaidBossCard = ({
+  value,
+  content,
+  onSuccess,
+  onClose,
+  onDeleteItem,
+  withBackTimer = false,
+}) => {
+  const remainTime = toTimeString(getMaxRespTime(value));
+
   return (
     <div className={styles.activeContainer}>
       <img
@@ -11,16 +27,57 @@ const RaidBossCard = ({ value, content, onSuccess, onReject }) => {
         alt={`${value.value} portrait`}
       />
       <div className={styles.valueInfoContainer}>
-        <div>
-          <p className={styles.name}>
-            {value.name}, {value.lvl} lvl
-          </p>
-          <p className={styles.location}>{value.location}</p>
+        <div className={styles.header}>
+          <RaidBossName value={value} />
+          {withBackTimer && (
+            <div className={styles.backtimer}>
+              <CountdownCircleTimer
+                size={80}
+                isPlaying
+                strokeWidth={8}
+                duration={getMaxRespTime(value)}
+                colors={["green", "yellow", "red"]}
+                colorsTime={[
+                  getMaxRespTime(value) / 3,
+                  getMaxRespTime(value) / 2,
+                  getMaxRespTime(value) / 1,
+                ]}
+                onComplete={() => {
+                  onDeleteItem(value);
+                  return { shouldRepeat: false, delay: 2 };
+                }}
+              >
+                {() => <p className={styles.counter}>{remainTime}</p>}
+              </CountdownCircleTimer>
+            </div>
+          )}
         </div>
+        {/* DECORATE */}
+        {withBackTimer && (
+          <>
+            <div className={styles.buttons}>
+              <button>
+                <a href={value.drop} rel="noreferrer" target="_blank">
+                  Drop
+                </a>
+              </button>
+              <button>
+                <a
+                  href={generatePath(value.drop)}
+                  rel="noreferrer"
+                  target="_blank"
+                  disabled
+                >
+                  Location
+                </a>
+              </button>
+            </div>
+          </>
+        )}
 
         {content}
         <div className={styles.buttons}>
-          <button onClick={onReject}>Close</button>
+          <button onClick={onClose}>Close</button>
           <button onClick={onSuccess}>Add</button>
         </div>
       </div>

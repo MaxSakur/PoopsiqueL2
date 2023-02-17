@@ -1,7 +1,13 @@
 import { useState } from "react";
 import styles from "./Icon.module.css";
 
-const Icon = ({ onClick, icon, color = "#000", hoverColor = color }) => {
+const Icon = ({
+  onClick = null,
+  icon,
+  color = "#000",
+  noBorder = false,
+  hoverColor = color,
+}) => {
   const [isHover, setIsHover] = useState(false);
 
   const handleMouseEnter = () => {
@@ -14,7 +20,7 @@ const Icon = ({ onClick, icon, color = "#000", hoverColor = color }) => {
 
   const addStyles = {
     color: isHover ? hoverColor : color,
-    border: `1px solid ${isHover ? hoverColor : color}`,
+    border: noBorder ? "" : `2px solid ${isHover ? hoverColor : color}`,
   };
 
   return (

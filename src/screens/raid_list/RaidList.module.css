@@ -6,27 +6,6 @@
     align-items: flex-start;
 }
 
-.raidList {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.raidList_item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 4px;
-    border-bottom: 1px solid #000;
-    padding-bottom: 4px;
-    gap: 12px;
-}
-.raidList_item_respown {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
-}
 .removeButton {
     height: 24px;
     width: 24px;
@@ -35,15 +14,11 @@
     align-items: center;
     border-radius: 100%;
 }
-.timeInput {
-    padding: 0 4px;
-    margin: 0 8px;
-}
 
-.raidList_item_name {
-    flex: 1;
-    text-align: start;
-    color: #ff7b3d;
+.raidList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .row {
