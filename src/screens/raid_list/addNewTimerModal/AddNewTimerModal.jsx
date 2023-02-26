@@ -1,5 +1,5 @@
 import Select from "react-select";
-import { useMemo, useState, useEffect, useCallback } from "react";
+import { useMemo, useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import styles from "./AddNewTimerModal.module.css";
 import RaidBossCard from "../../../components/raidBossCard";
@@ -63,21 +63,6 @@ const AddNewTimerModal = ({
     return updatedForSelectData;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [modalOpen]);
-
-  const escFunction = useCallback((event) => {
-    if (event.key === "Escape") {
-      handleClearCurrentAndCloseModal();
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    document.addEventListener("keydown", escFunction);
-    return () => {
-      document.removeEventListener("keydown", escFunction);
-    };
-  }, [escFunction]);
 
   return (
     <>

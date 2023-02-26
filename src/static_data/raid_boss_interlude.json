@@ -35,7 +35,7 @@
       "drop": "https://l2.dropspoil.com/npc/25163/roaring-skylancer.html"
     },
     {
-      "name": "Fafurion's Herald Lokness",
+      "name": "Fafurions Herald Lokness",
       "lvl": 70,
       "location": "1ый остров",
       "type": "all",
@@ -110,13 +110,6 @@
       "location": "Varka",
       "type": "all",
       "drop": "https://l2.dropspoil.com/npc/25235/vanor-chief-kandra.html"
-    },
-    {
-      "name": "Tanatos",
-      "lvl": 72,
-      "location": "Ancient Battleground",
-      "type": "all",
-      "drop": "https://l2.dropspoil.com/npc/25248/doom-blade-tanatos.html"
     },
     {
       "name": "Death Lord Hallate",

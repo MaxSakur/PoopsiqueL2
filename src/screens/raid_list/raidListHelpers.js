@@ -18,13 +18,26 @@ export const currentTime = () => {
 export const convertMsToTime = (ms) =>
   moment(ms, "x").format(EXTENDED_TIME_FORMAT);
 
-export const convertNextRespToMs = (boss, nextResp) => {
+let additionalRespownHours = (boss) => {
   const respowns = JSON.parse(localStorage.getItem(RAID_BOSS_SPOWN_DELAY));
-  const addDefaultRespown = moment(nextResp, DEFAULT_TIME_FORMAT).add(
-    respowns[boss.type],
+  switch (boss.type) {
+    case "all":
+      return respowns.all_bosses_timer;
+    case "alliance":
+      return respowns.alliance_bosses_timer;
+    case "nobless":
+      return respowns.nobless_timer;
+    default:
+      break;
+  }
+};
+
+export const convertNextRespToMs = (boss, lastKillTime) => {
+  const addDefaultRespown = moment(lastKillTime, DEFAULT_TIME_FORMAT).add(
+    additionalRespownHours(boss),
     "hours"
   );
-  return nextResp && addDefaultRespown.format("x");
+  return lastKillTime && addDefaultRespown.format("x");
 };
 
 export const restOfTime = ({ time }) => {
@@ -50,10 +63,30 @@ export const getItemWithRespownTime = (el, nextRespownTime) => {
   }
 };
 
+// ADD TIME
+export const addDefaultTimeToItem = (el) => {
+  return {
+    ...el,
+    time: moment(el.time, "x").add(additionalRespownHours(el), "hours"),
+  };
+};
+
 export const getMaxRespTime = (el, timeCount = "seconds") => {
   const respowns = JSON.parse(localStorage.getItem(RAID_BOSS_SPOWN_DELAY));
   const { time } = el;
-  const maxResp = moment(time, "x").add(respowns["random"], "hours");
+  let additionalRespownHours = () => {
+    switch (el.type) {
+      case "all":
+        return respowns.all_bosses_random;
+      case "alliance":
+        return respowns.alliance_bosses_random;
+      case "nobless":
+        return respowns.nobless_random;
+      default:
+        break;
+    }
+  };
+  const maxResp = moment(time, "x").add(additionalRespownHours(), "hours");
   return maxResp.diff(moment(), timeCount);
 };
 

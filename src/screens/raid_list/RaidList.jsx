@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useCallback } from "react";
 import Column from "../../components/column";
 import Icon from "../../components/button";
 import { MdDeleteForever } from "react-icons/md";
@@ -10,6 +10,7 @@ import {
   currentTime,
   convertMsToTime,
   RESPOWNED_DATA,
+  addDefaultTimeToItem,
 } from "./raidListHelpers";
 import { useEffect, useState } from "react";
 import AddNewTimerModal from "./addNewTimerModal";
@@ -32,11 +33,12 @@ export const RaidList = () => {
   const [modalOpen, changeModalOpen] = useState(false);
 
   const restOfRbList = useMemo(() => {
-    const result = staticRaidBossData.filter(
-      (rb) => !cachedDataWithTime.some((crb) => rb.name === crb.name)
+    return staticRaidBossData.filter(
+      (rb) =>
+        !cachedDataWithTime.some((crb) => rb.name === crb.name) &&
+        !respownedBoss.some((rdb) => rdb.name === rb.name)
     );
-    return result;
-  }, [cachedDataWithTime]);
+  }, [cachedDataWithTime, respownedBoss]);
 
   // DELETE ALL CACHED RESP DATA
   const handleClearCachedData = () => {
@@ -61,11 +63,14 @@ export const RaidList = () => {
     if (cachedDataWithTime.length > 0) {
       localStorage.setItem(RAID_BOSS_DATA, JSON.stringify(cachedDataWithTime));
     }
+  }, [cachedDataWithTime]);
+
+  useEffect(() => {
     // INITIALIZE RESPOWNED DATA
     if (respownedBoss.length > 0) {
       localStorage.setItem(RESPOWNED_DATA, JSON.stringify(respownedBoss));
     }
-  }, [respownedBoss, cachedDataWithTime]);
+  }, [respownedBoss]);
 
   useEffect(() => {
     // REHYDRATE CACHED DATA
@@ -89,7 +94,15 @@ export const RaidList = () => {
 
   // DELETE ONE ITEM FROM RESPOWNED DATA
   const removeRespownedBoss = (boss) => {
-    changeRespownedBoss(respownedBoss.filter((el) => el.name !== boss.name));
+    changeRespownedBoss(() =>
+      respownedBoss.filter((el) => el.name !== boss.name)
+    );
+  };
+
+  // RESET RESPOWNING EL TO CHECKED DATA
+  const resetRespowningElement = (el) => {
+    removeRespownedBoss(el);
+    changeCachedDataWithTime([...cachedDataWithTime, addDefaultTimeToItem(el)]);
   };
 
   // COUNTER CHECK
@@ -119,6 +132,21 @@ export const RaidList = () => {
     changeModalOpen(!modalOpen);
   };
 
+  const escFunction = useCallback((event) => {
+    if (event.key === "Escape") {
+      changeModalOpen(false);
+      changeCurrentRBwithTime(null);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener("keydown", escFunction);
+    return () => {
+      document.removeEventListener("keydown", escFunction);
+    };
+  }, [escFunction]);
+
   return (
     <div className={styles.mainContainer}>
       <Column
@@ -130,7 +158,7 @@ export const RaidList = () => {
           />
         }
         isOpen={settingsOpen}
-        headContent={<h2>Server settings</h2>}
+        headContent={<h2>Boss Respown Timers</h2>}
         bodyContent={<ServerSettings />}
       />
       <Column
@@ -165,17 +193,18 @@ export const RaidList = () => {
       />
 
       <Column
-        headContent={<h2>On respown</h2>}
+        headContent={<h2>Respown in any minute</h2>}
         bodyContent={
           <ul className={styles.raidList}>
             {respownedBoss &&
-              respownedBoss?.map((el, index) => {
+              respownedBoss.map((el, index) => {
                 return (
                   <RaidBossCard
                     key={index}
                     withBackTimer={true}
                     value={el}
-                    // onSuccess={() => {}}
+                    onSuccess={() => resetRespowningElement(el)}
+                    onClose={() => removeRespownedBoss(el)}
                     onDeleteItem={removeRespownedBoss}
                   />
                 );

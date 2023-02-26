@@ -1,6 +1,8 @@
 {
-        "all": 12,
-        "random": 12,
-        "alliance": 6,
-        "nobless": 3
+        "all_bosses_timer": 12,
+        "all_bosses_random": 1,
+        "alliance_bosses_timer": 6,
+        "alliance_bosses_random": 1,
+        "nobless_timer": 6,
+        "nobless_random": 1
 }

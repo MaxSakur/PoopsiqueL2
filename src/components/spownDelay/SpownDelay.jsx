@@ -22,17 +22,8 @@ const SpownDelay = () => {
     }
   }, []);
 
-  const handleChangeDefaultSpown = (el) => {
-    changeSpownDelay({ ...spownDelay, all: Number(el.target.value) });
-  };
-  const handleChangeRandomSpown = (el) => {
-    changeSpownDelay({ ...spownDelay, random: Number(el.target.value) });
-  };
-  const handleChangeAllianceSpown = (el) => {
-    changeSpownDelay({ ...spownDelay, alliance: Number(el.target.value) });
-  };
-  const handleChangeNoblessSpown = (el) => {
-    changeSpownDelay({ ...spownDelay, nobless: Number(el.target.value) });
+  const handleChangeSpownSetting = (param, el) => {
+    changeSpownDelay({ ...spownDelay, [param]: Number(el.target.value) });
   };
 
   return (
@@ -40,59 +31,75 @@ const SpownDelay = () => {
       {spownDelay && (
         <>
           <div className={styles.list_item}>
-            <div>
-              <p className={styles.list_item_value}>Base respown time</p>
-              <p className={styles.list_item_label}>
-                Main time of respown of all raid bosses
-              </p>
-            </div>
+            <p className={styles.list_item_value}></p>
             <input
-              type="number"
+              type="text"
+              disabled
               className={styles.list_item_input}
-              onChange={handleChangeDefaultSpown}
-              value={spownDelay.all}
+              value="respown"
+            />
+            <input
+              type="text"
+              disabled
+              className={styles.list_item_input}
+              value="random"
             />
           </div>
           <div className={styles.list_item}>
-            <div>
-              <p className={styles.list_item_value}>Default random time</p>
-              <p className={styles.list_item_label}>
-                Random time, when boss can be spowned
-              </p>
-            </div>
+            <p className={styles.list_item_value}>All Raid Bosses</p>
+
             <input
               type="number"
               className={styles.list_item_input}
-              onChange={handleChangeRandomSpown}
-              value={spownDelay.random}
+              onChange={(el) =>
+                handleChangeSpownSetting("all_bosses_timer", el)
+              }
+              value={spownDelay.all_bosses_timer}
+            />
+            <input
+              type="number"
+              className={styles.list_item_input}
+              onChange={(el) =>
+                handleChangeSpownSetting("all_bosses_random", el)
+              }
+              value={spownDelay.all_bosses_random}
+            />
+          </div>
+
+          <div className={styles.list_item}>
+            <p className={styles.list_item_value}>Ketra/Varka (Alliance)</p>
+
+            <input
+              type="number"
+              className={styles.list_item_input}
+              onChange={(el) =>
+                handleChangeSpownSetting("alliance_bosses_timer", el)
+              }
+              value={spownDelay.alliance_bosses_timer}
+            />
+            <input
+              type="number"
+              className={styles.list_item_input}
+              onChange={(el) =>
+                handleChangeSpownSetting("alliance_bosses_random", el)
+              }
+              value={spownDelay.alliance_bosses_random}
             />
           </div>
           <div className={styles.list_item}>
-            <div>
-              <p className={styles.list_item_value}>Alliance random time</p>
-              <p className={styles.list_item_label}>
-                Random time, when Ketra/Varka 4/5 lvl bosses can be spawned
-              </p>
-            </div>
+            <p className={styles.list_item_value}>Barakiel (Nobless)</p>
+
             <input
               type="number"
               className={styles.list_item_input}
-              onChange={handleChangeAllianceSpown}
-              value={spownDelay.alliance}
+              onChange={(el) => handleChangeSpownSetting("nobless_timer", el)}
+              value={spownDelay.nobless_timer}
             />
-          </div>
-          <div className={styles.list_item}>
-            <div>
-              <p className={styles.list_item_value}>Nobless random time</p>
-              <p className={styles.list_item_label}>
-                Random additional time, when nobless boss can be spawned
-              </p>
-            </div>
             <input
               type="number"
               className={styles.list_item_input}
-              onChange={handleChangeNoblessSpown}
-              value={spownDelay.nobless}
+              onChange={(el) => handleChangeSpownSetting("nobless_random", el)}
+              value={spownDelay.nobless_random}
             />
           </div>
         </>
