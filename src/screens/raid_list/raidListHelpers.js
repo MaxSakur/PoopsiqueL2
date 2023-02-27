@@ -104,5 +104,10 @@ export const toTimeString = (seconds) => {
 };
 
 export const generatePath = (str) => str.replace("npc", "loc");
-
+export const getHoursDiff = (time) => {
+  return moment(time, "x").diff(
+    moment(currentTime(), EXTENDED_TIME_FORMAT),
+    "hours"
+  );
+};
 export const clearAllCachedData = () => localStorage.removeItem(RAID_BOSS_DATA);

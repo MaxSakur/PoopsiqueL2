@@ -5,12 +5,11 @@ import { MdDeleteForever } from "react-icons/md";
 import { TbArrowBarToLeft, TbArrowBarToRight } from "react-icons/tb";
 import {
   RAID_BOSS_DATA,
+  RESPOWNED_DATA,
   getItemWithRespownTime,
   clearAllCachedData,
-  currentTime,
-  convertMsToTime,
-  RESPOWNED_DATA,
   addDefaultTimeToItem,
+  getHoursDiff,
 } from "./raidListHelpers";
 import { useEffect, useState } from "react";
 import AddNewTimerModal from "./addNewTimerModal";
@@ -111,7 +110,8 @@ export const RaidList = () => {
   useEffect(() => {
     if (cachedDataWithTime) {
       cachedDataWithTime?.map((el) => {
-        if (convertMsToTime(el.time) === currentTime()) {
+        const diff = getHoursDiff(el.time);
+        if (diff === 0) {
           removeRespowningBoss(el);
           changeRespownedBoss([
             ...respownedBoss.filter((item) => item.name !== el.name),
