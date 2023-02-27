@@ -25,8 +25,8 @@ let move = new Audio();
 move.src = "https://www.dropbox.com/s/fiyx4q2mdwynraj/FF7CursorMove.mp3?raw=1";
 
 export const RaidList = () => {
-  const [cachedDataWithTime, changeCachedDataWithTime] = useState([]);
-  const [respownedBoss, changeRespownedBoss] = useState([]);
+  const [cachedDataWithTime, changeCachedDataWithTime] = useState(null);
+  const [respownedBoss, changeRespownedBoss] = useState(null);
   const [currentRBwithTime, changeCurrentRBwithTime] = useState();
   const [loading, changeLoading] = useState(false);
   const [settingsOpen, changeSettingsOpen] = useState(true);
@@ -35,7 +35,9 @@ export const RaidList = () => {
   const restOfRbList = useMemo(() => {
     return staticRaidBossData.filter(
       (rb) =>
+        cachedDataWithTime &&
         !cachedDataWithTime.some((crb) => rb.name === crb.name) &&
+        respownedBoss &&
         !respownedBoss.some((rdb) => rdb.name === rb.name)
     );
   }, [cachedDataWithTime, respownedBoss]);
@@ -60,14 +62,14 @@ export const RaidList = () => {
 
   useEffect(() => {
     // INITIALIZE CACHED DATA
-    if (cachedDataWithTime.length > 0) {
+    if (cachedDataWithTime) {
       localStorage.setItem(RAID_BOSS_DATA, JSON.stringify(cachedDataWithTime));
     }
   }, [cachedDataWithTime]);
 
   useEffect(() => {
     // INITIALIZE RESPOWNED DATA
-    if (respownedBoss.length > 0) {
+    if (respownedBoss) {
       localStorage.setItem(RESPOWNED_DATA, JSON.stringify(respownedBoss));
     }
   }, [respownedBoss]);

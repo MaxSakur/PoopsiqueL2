@@ -7,7 +7,7 @@ import {
 import { MdDeleteForever } from "react-icons/md";
 
 const RespownList = ({ data, removeRespownedBoss }) => {
-  return (
+  return data ? (
     <ul>
       {data.length > 0
         ? data
@@ -39,7 +39,7 @@ const RespownList = ({ data, removeRespownedBoss }) => {
             })
         : null}
     </ul>
-  );
+  ) : null;
 };
 
 export default RespownList;
