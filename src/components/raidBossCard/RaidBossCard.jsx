@@ -32,9 +32,9 @@ const RaidBossCard = ({
           {withBackTimer && (
             <div className={styles.backtimer}>
               <CountdownCircleTimer
-                size={80}
+                size={60}
                 isPlaying
-                strokeWidth={8}
+                strokeWidth={4}
                 duration={getMaxRespTime(value)}
                 colors={["green", "yellow", "red"]}
                 colorsTime={[
@@ -44,10 +44,14 @@ const RaidBossCard = ({
                 ]}
                 onComplete={() => {
                   onDeleteItem(value);
-                  return { shouldRepeat: false, delay: 2 };
+                  return { shouldRepeat: false, delay: 5 };
                 }}
               >
-                {() => <p className={styles.counter}>{remainTime}</p>}
+                {({ color }) => (
+                  <p className={styles.counter} style={{ color }}>
+                    {remainTime}
+                  </p>
+                )}
               </CountdownCircleTimer>
             </div>
           )}

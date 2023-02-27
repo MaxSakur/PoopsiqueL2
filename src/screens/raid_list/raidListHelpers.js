@@ -67,7 +67,9 @@ export const getItemWithRespownTime = (el, nextRespownTime) => {
 export const addDefaultTimeToItem = (el) => {
   return {
     ...el,
-    time: moment(el.time, "x").add(additionalRespownHours(el), "hours"),
+    time: moment(el.time, "x")
+      .add(additionalRespownHours(el), "hours")
+      .format("x"),
   };
 };
 
