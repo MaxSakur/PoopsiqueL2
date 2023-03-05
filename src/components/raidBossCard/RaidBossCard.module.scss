@@ -24,7 +24,7 @@
     right: 0;
     top: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(224, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,13 +45,14 @@
     display: flex;
     flex: 1;
     gap: 16px;
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
+    background: linear-gradient(180deg, #353A40 0%, #16171B 100%),
+    linear-gradient(180deg, #424750 0.93%, #202326 100%);    
     align-items: center;
     & .image {
         height: 140px;
         width: 125px;
     }
+    
     & .valueInfoContainer {
         display: flex;
         text-align: left;

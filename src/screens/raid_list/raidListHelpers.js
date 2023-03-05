@@ -37,11 +37,20 @@ let additionalRespownHours = (boss) => {
 };
 
 export const convertNextRespToMs = (boss, lastKillTime) => {
-  const addDefaultRespown = moment(lastKillTime, DEFAULT_TIME_FORMAT).add(
-    additionalRespownHours(boss),
-    "hours"
-  );
-  return lastKillTime && addDefaultRespown.format("x");
+  const now = moment();
+  const lastKill = moment(lastKillTime, DEFAULT_TIME_FORMAT);
+  let result = "";
+  if (now.diff(lastKill) > 0) {
+    result = moment(lastKillTime, DEFAULT_TIME_FORMAT).add(
+      additionalRespownHours(boss),
+      "hours"
+    );
+  } else {
+    result = moment(lastKillTime, DEFAULT_TIME_FORMAT)
+      .add(-1, "days")
+      .add(additionalRespownHours(boss), "hours");
+  }
+  return result.format("x");
 };
 
 export const restOfTime = ({ time }) => {

@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import Icon from "../../../components/button";
+import Icon from "../../../components/icon";
 import Column from "../../../components/column";
 import { MdDeleteForever } from "react-icons/md";
 import AddNewTimerModal from "../addNewTimerModal";

@@ -1,5 +1,5 @@
 import styles from "./RespownList.module.css";
-import Icon from "../button";
+import Icon from "../icon";
 import {
   getRespownTime,
   restOfTime,

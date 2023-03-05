@@ -2,7 +2,7 @@ import styles from "./Header.module.css";
 import logo from "./../../images/L2logo.png";
 import moment from "moment";
 import { useEffect, useState } from "react";
-import Icon from "../button";
+import Icon from "../icon";
 import { BsClock } from "react-icons/bs";
 
 export const Header = () => {

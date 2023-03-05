@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Column from "../../../components/column";
-import Icon from "../../../components/button";
+import Icon from "../../../components/icon";
 import { TbArrowBarToLeft, TbArrowBarToRight } from "react-icons/tb";
 import ServerSettings from "../../../components/spownDelay";
 

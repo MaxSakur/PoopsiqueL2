@@ -8,6 +8,7 @@ import {
 } from "../../screens/raid_list/raidListHelpers";
 import RaidBossName from "../raidBossName/RaidBossName";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
+import Button from "../button";
 
 const RaidBossCard = ({
   value,
@@ -19,36 +20,35 @@ const RaidBossCard = ({
 }) => {
   const { maxSeconds, diff } = getMaxRespTime(value);
   return (
-    <div className={styles.activeContainer}>
+    <li className={styles.activeContainer}>
       <img
         className={styles.image}
         src={generatePathByName(value.name)}
         alt={`${value.value} portrait`}
       />
+
       <div className={styles.valueInfoContainer}>
         <div className={styles.header}>
           <RaidBossName value={value} />
           {withBackTimer && (
             <div className={styles.backtimer}>
               <CountdownCircleTimer
-                size={60}
+                size={80}
                 isPlaying
                 strokeWidth={4}
+                updateInterval={3600}
                 duration={maxSeconds}
                 initialRemainingTime={diff}
-                colors={["green", "yellow", "red"]}
-                colorsTime={[
-                  getMaxRespTime(value) / 3,
-                  getMaxRespTime(value) / 2,
-                  getMaxRespTime(value) / 1,
-                ]}
+                colorsTime={[maxSeconds, maxSeconds / 2, maxSeconds / 3]}
+                colors={["#058DD9"]}
                 onComplete={() => {
                   onDeleteItem(value);
-                  return { shouldRepeat: false, delay: 5 };
+                  return { shouldRepeat: false };
                 }}
               >
                 {({ color, remainingTime }) => (
                   <p className={styles.counter} style={{ color }}>
+                    {console.log(color, "color")}
                     {toTimeString(remainingTime)}
                   </p>
                 )}
@@ -81,11 +81,12 @@ const RaidBossCard = ({
 
         {content}
         <div className={styles.buttons}>
+          <Button />
           <button onClick={onClose}>Close</button>
           <button onClick={onSuccess}>Add</button>
         </div>
       </div>
-    </div>
+    </li>
   );
 };
 

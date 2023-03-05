@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import styles from "./AddNewTimerModal.module.css";
 import RaidBossCard from "../../../components/raidBossCard";
-import Icon from "../../../components/button";
+import Icon from "../../../components/icon";
 import staticRaidBossData from "./../../../static_data/raid_boss_interlude.json";
 
 const selectFont = {
