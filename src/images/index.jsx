@@ -50,6 +50,7 @@ import Anakim from "./Anakim.jpg";
 import SoulOfFireNastron from "./Soul Of Fire Nastron.jpg";
 import SoulOfWaterAshutar from "./Soul Of Water Ashutar.jpg";
 import SpiritOfAndrasTheBetrayer from "./Spirit Of Andras The Betrayer.jpg";
+import Dino from "./Dino.jpg";
 
 export const images = {
   Anakim,
@@ -104,6 +105,7 @@ export const images = {
   RoaringSkylancer,
   Korim,
   Cabrio,
+  Dino,
 };
 
 export const generatePathByName = (name) => {

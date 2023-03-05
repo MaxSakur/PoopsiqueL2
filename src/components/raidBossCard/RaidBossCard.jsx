@@ -17,8 +17,7 @@ const RaidBossCard = ({
   onDeleteItem,
   withBackTimer = false,
 }) => {
-  const remainTime = toTimeString(getMaxRespTime(value));
-
+  const { maxSeconds, diff } = getMaxRespTime(value);
   return (
     <div className={styles.activeContainer}>
       <img
@@ -35,7 +34,8 @@ const RaidBossCard = ({
                 size={60}
                 isPlaying
                 strokeWidth={4}
-                duration={getMaxRespTime(value)}
+                duration={maxSeconds}
+                initialRemainingTime={diff}
                 colors={["green", "yellow", "red"]}
                 colorsTime={[
                   getMaxRespTime(value) / 3,
@@ -47,9 +47,9 @@ const RaidBossCard = ({
                   return { shouldRepeat: false, delay: 5 };
                 }}
               >
-                {({ color }) => (
+                {({ color, remainingTime }) => (
                   <p className={styles.counter} style={{ color }}>
-                    {remainTime}
+                    {toTimeString(remainingTime)}
                   </p>
                 )}
               </CountdownCircleTimer>

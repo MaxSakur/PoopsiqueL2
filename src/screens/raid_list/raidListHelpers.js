@@ -7,6 +7,10 @@ export const RESPOWNED_DATA = "respowned_data";
 export const DEFAULT_TIME_FORMAT = "HH:mm";
 export const EXTENDED_TIME_FORMAT = "DD.MM.YY HH:mm";
 
+// SOUNDS
+export let move = new Audio();
+move.src = "https://www.dropbox.com/s/fiyx4q2mdwynraj/FF7CursorMove.mp3?raw=1";
+
 export const findBossByName = ({ name }) => {
   return staticRaidBossData.filter((boss) => boss.name === name);
 };
@@ -88,8 +92,13 @@ export const getMaxRespTime = (el, timeCount = "seconds") => {
         break;
     }
   };
-  const maxResp = moment(time, "x").add(additionalRespownHours(), "hours");
-  return maxResp.diff(moment(), timeCount);
+  const maxSeconds = moment(time, "x").add(additionalRespownHours(), "hours");
+
+  const diff = maxSeconds.diff(moment(), timeCount);
+  return {
+    diff,
+    maxSeconds,
+  };
 };
 
 export const toTimeString = (seconds) => {
