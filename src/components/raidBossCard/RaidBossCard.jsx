@@ -1,91 +1,60 @@
-import React from "react";
-import styles from "./RaidBossCard.module.css";
 import { generatePathByName } from "../../images";
 import {
-  generatePath,
   getMaxRespTime,
   toTimeString,
 } from "../../screens/raid_list/raidListHelpers";
 import RaidBossName from "../raidBossName/RaidBossName";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
-import Button from "../button";
+import styles from "./RaidBossCard.module.css";
 
 const RaidBossCard = ({
   value,
   content,
-  onSuccess,
-  onClose,
   onDeleteItem,
+  buttons,
   withBackTimer = false,
 }) => {
   const { maxSeconds, diff } = getMaxRespTime(value);
   return (
     <li className={styles.activeContainer}>
-      <img
-        className={styles.image}
-        src={generatePathByName(value.name)}
-        alt={`${value.value} portrait`}
+      <div
+        className={styles.imageContainer}
+        style={{ backgroundImage: `url("${generatePathByName(value.name)}")` }}
       />
 
       <div className={styles.valueInfoContainer}>
         <div className={styles.header}>
           <RaidBossName value={value} />
-          {withBackTimer && (
-            <div className={styles.backtimer}>
-              <CountdownCircleTimer
-                size={80}
-                isPlaying
-                strokeWidth={4}
-                updateInterval={3600}
-                duration={maxSeconds}
-                initialRemainingTime={diff}
-                colorsTime={[maxSeconds, maxSeconds / 2, maxSeconds / 3]}
-                colors={["#058DD9"]}
-                onComplete={() => {
-                  onDeleteItem(value);
-                  return { shouldRepeat: false };
-                }}
-              >
-                {({ color, remainingTime }) => (
-                  <p className={styles.counter} style={{ color }}>
-                    {console.log(color, "color")}
-                    {toTimeString(remainingTime)}
-                  </p>
-                )}
-              </CountdownCircleTimer>
-            </div>
-          )}
         </div>
-        {/* DECORATE */}
-        {withBackTimer && (
-          <>
-            <div className={styles.buttons}>
-              <button>
-                <a href={value.drop} rel="noreferrer" target="_blank">
-                  Drop
-                </a>
-              </button>
-              <button>
-                <a
-                  href={generatePath(value.drop)}
-                  rel="noreferrer"
-                  target="_blank"
-                  disabled
-                >
-                  Location
-                </a>
-              </button>
-            </div>
-          </>
-        )}
 
         {content}
-        <div className={styles.buttons}>
-          <Button />
-          <button onClick={onClose}>Close</button>
-          <button onClick={onSuccess}>Add</button>
-        </div>
+        <div className={styles.buttons}>{buttons}</div>
       </div>
+
+      {withBackTimer && (
+        <div className={styles.backtimer}>
+          <CountdownCircleTimer
+            size={66}
+            isPlaying
+            strokeWidth={2}
+            updateInterval={3600}
+            duration={diff}
+            initialRemainingTime={maxSeconds}
+            colors={["#058DD9", "#058DD9", "#058DD9"]}
+            colorsTime={[maxSeconds, maxSeconds % 2, maxSeconds % 3]}
+            onComplete={() => {
+              onDeleteItem(value);
+              return { shouldRepeat: false, delay: 1.5 };
+            }}
+          >
+            {({ color, remainingTime }) => (
+              <p className={styles.counter} style={{ color }}>
+                {toTimeString(remainingTime)}
+              </p>
+            )}
+          </CountdownCircleTimer>
+        </div>
+      )}
     </li>
   );
 };

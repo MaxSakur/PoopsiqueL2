@@ -1,16 +1,99 @@
-.button {
-  position: absolute;
-  border: 1px solid;
-  border-radius: 100%;
-  bottom: 50px;
-  right: 50px;
-}
-
-.header {
+.activeContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 8px 8px 8px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 170px;
+  gap: 16px;
+  -webkit-box-shadow: -6px 9px 5px 0px rgba(0, 0, 0, 0.35);
+          box-shadow: -6px 9px 5px 0px rgba(0, 0, 0, 0.35);
+  background: -webkit-gradient(linear, left top, left bottom, from(#353A40), to(#16171B)), -webkit-gradient(linear, left top, left bottom, color-stop(0.93%, #424750), to(#202326));
+  background: linear-gradient(180deg, #353A40 0%, #16171B 100%), linear-gradient(180deg, #424750 0.93%, #202326 100%);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.activeContainer .imageContainer {
+  width: 180px;
+  height: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.activeContainer .valueInfoContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: left;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-right: 16px;
+}
+
+.activeContainer .valueInfoContainer .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 16px;
+  padding-top: 4px;
+}
+
+.activeContainer .valueInfoContainer input[type="time"] {
+  padding: 4px 8px;
+  width: inherit;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.activeContainer .valueInfoContainer input[type="time"]::-webkit-calendar-picker-indicator {
+  -webkit-filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
+          filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
+}
+
+.activeContainer .valueInfoContainer .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.activeContainer .valueInfoContainer .buttons button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 4px 8px;
+  border: none;
+  font-weight: bold;
+}
+
+.activeContainer .valueInfoContainer .buttons button a {
+  text-decoration: none;
+  color: #000;
+}
+
+.activeContainer .valueInfoContainer .buttons button:hover {
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .counter {
@@ -52,80 +135,6 @@
   gap: 12px;
 }
 
-.activeContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  gap: 16px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#353A40), to(#16171B)), -webkit-gradient(linear, left top, left bottom, color-stop(0.93%, #424750), to(#202326));
-  background: linear-gradient(180deg, #353A40 0%, #16171B 100%), linear-gradient(180deg, #424750 0.93%, #202326 100%);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.activeContainer .image {
-  height: 140px;
-  width: 125px;
-}
-
-.activeContainer .valueInfoContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: left;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.activeContainer .valueInfoContainer input[type="time"] {
-  padding: 4px 8px;
-}
-
-.activeContainer .valueInfoContainer input[type="time"]::-webkit-calendar-picker-indicator {
-  -webkit-filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
-          filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
-}
-
-.activeContainer .valueInfoContainer .buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 12px;
-  margin: 8px 0;
-}
-
-.activeContainer .valueInfoContainer .buttons button {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  padding: 4px 8px;
-  border: none;
-  font-weight: bold;
-}
-
-.activeContainer .valueInfoContainer .buttons button a {
-  text-decoration: none;
-  color: #000;
-}
-
-.activeContainer .valueInfoContainer .buttons button:hover {
-  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
 .addButton {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -140,4 +149,19 @@
   cursor: pointer;
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.backtimer {
+  width: 140px;
+  background-color: #000;
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }

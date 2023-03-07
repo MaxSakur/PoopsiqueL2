@@ -1,16 +1,15 @@
 .container {
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(0,0,0,0.35);
     box-sizing: border-box;
+    box-shadow: -1px 6px 5px 0px rgba(0 , 0 ,0 , 0.35);
     border-radius: 16px;
-    box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.35);
-    flex: 1;
     overflow: hidden;
     & .head {
         padding: 0 12px;
         background: #000;
-        border-bottom: 1px solid lightgray;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
         display: flex;
         min-height: 60px;
         justify-content: space-between;
@@ -27,9 +26,7 @@
         }
     
     }
-    & .body {
-        padding: 16px 8px;
-    }
+
 }
 
 .container_closed {
@@ -37,7 +34,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // width: min-content;
     max-width: 280px;
     flex-wrap: nowrap;
     background: #000;

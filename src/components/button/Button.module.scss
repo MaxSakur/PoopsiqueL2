@@ -1,0 +1,33 @@
+.container {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    overflow: hidden;
+    border: 2px solid #058DD9;
+    box-shadow: -1px 6px 5px 0px rgba(0 , 0 ,0 , 0.35);
+    background: linear-gradient(145deg, #353A40 0%, #058DD9 50%);
+    text-decoration: none;
+    cursor: pointer;
+    & .icon_container  {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+            height: 30px;
+            width: 30px;
+            fill: #fff;
+        }
+
+    }
+
+    & .label_container {
+
+        p  {
+            color: #fff;
+            font-family: 'Lato', sans-serif;
+        }
+    } 
+}

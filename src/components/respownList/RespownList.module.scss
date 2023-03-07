@@ -3,23 +3,44 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+    gap: 16px;
+    height: 100%;
+    padding: 16px;
     &_item {
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin-bottom: 4px;
-        border-bottom: 1px solid #000;
-        padding-bottom: 4px;
         gap: 12px;
+        padding: 8px 16px;
+        box-shadow: -6px 9px 5px 0px rgba(0, 0, 0, 0.35);
+        background: linear-gradient(180deg, #353A40 0%, #16171B 100%),
+        linear-gradient(180deg, #424750 0.93%, #202326 100%);   
+        border-radius: 12px;
+        position: relative;
+        height: 100%;
+        overflow: hidden;
         &_respown {
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 150px;
+            height: 76px;
+            padding: 4px 16px;
+            background: #000;
+            & .rest {
+                color: #fff;
+                font-size: 18px;
+                font-weight: 600;
+            }   
+            & .fixed {
+                color: rgb(5, 141, 217);
+                font-size: 16px;
+            }
         }
-        &_name {
-            flex: 1;
-            text-align: start;
-            color: #ff7b3d;
-        }
+       
     }
 }

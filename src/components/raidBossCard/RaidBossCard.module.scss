@@ -1,22 +1,74 @@
-.button {
-    position: absolute;
-    border: 1px solid;
-    border-radius: 100%;
-    bottom: 50px;
-    right: 50px;
+.activeContainer {
+    display: flex;
+    border-radius: 12px;
+    overflow: hidden;
+    flex: 1;
+    height: 170px;
+    gap: 16px;
+    box-shadow: -6px 9px 5px 0px rgba(0 , 0 ,0 , 0.35);
+    background: linear-gradient(180deg, #353A40 0%, #16171B 100%),
+    linear-gradient(180deg, #424750 0.93%, #202326 100%);    
+    align-items: center;
+    & .imageContainer {
+        width: 180px;
+        height: inherit;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    & .valueInfoContainer {
+        display: flex;
+        text-align: left;
+        flex-direction: column;
+        flex: 1;
+        justify-content: space-between;
+        padding-right: 16px;
+        .header {
+            display: flex;
+            padding-bottom: 16px;
+            padding-top: 4px;
+        }
+        & input[type="time"]{
+            padding: 4px 8px;
+            width: inherit;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            &::-webkit-calendar-picker-indicator {
+                filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
+            }
+        }
+
+        & .buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 8px;
+            justify-content: center;
+            & button {
+                flex: 1;
+                padding: 4px 8px;
+                border: none;
+                font-weight: bold;
+                & a {
+                    text-decoration: none;
+                    color: #000;
+                }
+                &:hover{
+                    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
 }
 
-.header {
-    display: flex;
-    padding: 8px 8px 8px 0;
-}
+
 .counter {
     color: #000;
     font-weight: 700;
 }
-// .backtimer {
-//     bo
-// }
+
 
 .modal_container {
     position: absolute;
@@ -41,52 +93,7 @@
     background-color: #fff;
     gap: 12px;
 }
-.activeContainer {
-    display: flex;
-    flex: 1;
-    gap: 16px;
-    background: linear-gradient(180deg, #353A40 0%, #16171B 100%),
-    linear-gradient(180deg, #424750 0.93%, #202326 100%);    
-    align-items: center;
-    & .image {
-        height: 140px;
-        width: 125px;
-    }
-    
-    & .valueInfoContainer {
-        display: flex;
-        text-align: left;
-        flex-direction: column;
-        flex: 1;
-        justify-content: space-between;
-        & input[type="time"]{
-            padding: 4px 8px;
-            &::-webkit-calendar-picker-indicator {
-                filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
-            }
-        }
-        & .buttons {
-            display: flex;
-            gap: 12px;
-            margin: 8px 0 ;
-            & button {
-                flex: 1;
-                padding: 4px 8px;
-                border: none;
-                font-weight: bold;
-                & a {
-                    text-decoration: none;
-                    color: #000;
-                }
-                &:hover{
-                    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-                    cursor: pointer;
-                }
-                
-            }
-        }
-    }
-}
+
 .addButton {
     display: flex;
     padding: 20px;
@@ -96,4 +103,13 @@
         cursor: pointer;
         box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
     }
+}
+
+.backtimer {
+   width: 140px;
+   background-color: #000;
+   height: inherit;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }

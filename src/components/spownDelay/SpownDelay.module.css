@@ -6,7 +6,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 6px 8px;
+  padding: 16px;
+  width: 400px;
 }
 
 .list_item {
@@ -16,14 +17,26 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  position: relative;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 4px;
   /* Chrome, Safari, Edge, Opera */
-  /* Firefox */
+}
+
+.list_item::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  margin-top: 8px;
+  background: white;
+  background: linear-gradient(177deg, #ff7b3d 0%, white 20%, rgba(0, 0, 0, 0) 80%);
 }
 
 .list_item div {
@@ -41,12 +54,13 @@
 }
 
 .list_item_value {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   text-align: left;
+  color: #fff;
 }
 
 .list_item_label {
@@ -61,6 +75,8 @@
   font-size: 18px;
   text-align: center;
   font-weight: 800;
+  border: none;
+  margin: 0 2px;
 }
 
 .list_item input::-webkit-outer-spin-button,
@@ -70,11 +86,20 @@
 }
 
 .list_item input[type=number] {
-  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+
+.list_item:first-child::before {
+  display: none;
 }
 
 .list_item:first-child input[type="text"] {
+  height: auto;
   border-color: transparent;
   font-weight: normal;
   text-transform: capitalize;
+  background-color: transparent;
+  color: #fff;
 }

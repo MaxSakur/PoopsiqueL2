@@ -5,10 +5,11 @@ const Column = ({
   bodyContent,
   iconLeft,
   iconRight,
+  flex,
   isOpen = true,
 }) => {
   return isOpen ? (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ flex: flex }}>
       <div className={styles.head}>
         <div className={styles.head_button}>{iconLeft}</div>
         <div className={styles.head_content}>{headContent}</div>

@@ -6,14 +6,12 @@ import styles from "./SpownDelay.module.css";
 const SpownDelay = () => {
   const [spownDelay, changeSpownDelay] = useState();
   useEffect(() => {
-    // INITIALIZE SPOWN DELAY
     if (spownDelay) {
       localStorage.setItem(RAID_BOSS_SPOWN_DELAY, JSON.stringify(spownDelay));
     }
   }, [spownDelay]);
 
   useEffect(() => {
-    // REHYDRATE CACHED DATA
     const data = localStorage.getItem(RAID_BOSS_SPOWN_DELAY);
     if (data) {
       changeSpownDelay(JSON.parse(data));

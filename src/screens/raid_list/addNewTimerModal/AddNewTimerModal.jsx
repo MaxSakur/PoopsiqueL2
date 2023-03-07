@@ -1,10 +1,10 @@
 import Select from "react-select";
 import { useMemo, useState } from "react";
-import { FaPlus } from "react-icons/fa";
 import styles from "./AddNewTimerModal.module.css";
 import RaidBossCard from "../../../components/raidBossCard";
-import Icon from "../../../components/icon";
 import staticRaidBossData from "./../../../static_data/raid_boss_interlude.json";
+import Button from "../../../components/button";
+import { RiCloseFill, RiPlayListAddFill } from "react-icons/ri";
 
 const selectFont = {
   fontSize: 14,
@@ -34,11 +34,6 @@ const AddNewTimerModal = ({
   onChangeActiveItem,
 }) => {
   const [respawnTimer, changeRespawnTimer] = useState("");
-
-  const toggleModal = () => {
-    changeModalOpen();
-  };
-
   const handleAddListenedItem = () => {
     onSuccess(value, respawnTimer);
     changeModalOpen();
@@ -66,7 +61,6 @@ const AddNewTimerModal = ({
 
   return (
     <>
-      <Icon color={"green"} icon={<FaPlus />} onClick={toggleModal} />
       {modalOpen && (
         <div className={styles.modal_container}>
           <div className={styles.overlay} />
@@ -75,7 +69,6 @@ const AddNewTimerModal = ({
               options={convertedDataForSelect}
               styles={colourStyles}
               onChange={(el) => onChangeActiveItem(el)}
-              // onChange={(el) => changevalue(el)}
             />
 
             {value && (
@@ -94,8 +87,20 @@ const AddNewTimerModal = ({
                     }}
                   />
                 }
-                onSuccess={handleAddListenedItem}
-                onClose={handleClearCurrentAndCloseModal}
+                buttons={
+                  <>
+                    <Button
+                      icon={<RiCloseFill />}
+                      label="Close"
+                      onClick={handleClearCurrentAndCloseModal}
+                    />
+                    <Button
+                      icon={<RiPlayListAddFill />}
+                      label="Add"
+                      onClick={handleAddListenedItem}
+                    />
+                  </>
+                }
               />
             )}
           </div>

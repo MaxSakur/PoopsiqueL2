@@ -7,7 +7,6 @@ export const RESPOWNED_DATA = "respowned_data";
 export const DEFAULT_TIME_FORMAT = "HH:mm";
 export const EXTENDED_TIME_FORMAT = "DD.MM.YY HH:mm";
 
-// SOUNDS
 export let move = new Audio();
 move.src = "https://www.dropbox.com/s/fiyx4q2mdwynraj/FF7CursorMove.mp3?raw=1";
 
@@ -63,7 +62,6 @@ export const getRespownTime = (boss) => {
   return res;
 };
 
-// WORKING
 export const getItemWithRespownTime = (el, nextRespownTime) => {
   if (moment(nextRespownTime, DEFAULT_TIME_FORMAT).isValid()) {
     const currentBoss = findBossByName(el);
@@ -76,7 +74,6 @@ export const getItemWithRespownTime = (el, nextRespownTime) => {
   }
 };
 
-// ADD TIME
 export const addDefaultTimeToItem = (el) => {
   return {
     ...el,
