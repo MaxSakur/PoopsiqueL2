@@ -44,3 +44,17 @@
        
     }
 }
+
+.hint_container {
+    display: flex;
+    padding: 0 16px;
+    gap: 32px;
+    align-items: center;
+    & .icon_container {
+        width: 100px;
+        height: 100px;
+    }
+    & .hint {
+        color: #fff;
+    }
+}

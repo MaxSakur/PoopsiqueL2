@@ -1,25 +1,32 @@
 import React, { useState } from "react";
 import styles from "./Button.module.css";
 
-const Button = ({ label, icon, onClick, externalLink, size = "sm" }) => {
+const Button = ({
+  label,
+  icon,
+  onClick,
+  disabled = false,
+  externalLink,
+  size = "sm",
+}) => {
   const [isHovered, changeIsHovered] = useState(false);
   const handleDisabled = () => changeIsHovered(false);
   const handleActive = () => changeIsHovered(true);
-
-  const Content = () => {
-    return isHovered ? (
-      <div className={styles.label_container}>
-        <p>{label}</p>
-      </div>
-    ) : (
-      <div className={styles.icon_container}>{icon}</div>
-    );
-  };
 
   const iconStyleConditions =
     size === "xl"
       ? { width: "100%", height: "100%" }
       : { width: "60px", height: "60px" };
+
+  const Content = () => {
+    return isHovered && label ? (
+      <div className={styles.label_container}>
+        <p style={{ fontSize: size === "xl" ? 20 : 12 }}>{label}</p>
+      </div>
+    ) : (
+      <div className={styles.icon_container}>{icon}</div>
+    );
+  };
 
   return externalLink ? (
     <a
@@ -39,7 +46,7 @@ const Button = ({ label, icon, onClick, externalLink, size = "sm" }) => {
       onMouseOver={handleActive}
       onMouseLeave={handleDisabled}
       style={iconStyleConditions}
-      onClick={onClick}
+      onClick={!disabled && onClick}
     >
       <Content />
     </div>

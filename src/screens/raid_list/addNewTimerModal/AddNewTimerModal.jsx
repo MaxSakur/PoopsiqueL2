@@ -5,6 +5,7 @@ import RaidBossCard from "../../../components/raidBossCard";
 import staticRaidBossData from "./../../../static_data/raid_boss_interlude.json";
 import Button from "../../../components/button";
 import { RiCloseFill, RiPlayListAddFill } from "react-icons/ri";
+import { useTranslation } from "react-i18next";
 
 const selectFont = {
   fontSize: 14,
@@ -34,6 +35,7 @@ const AddNewTimerModal = ({
   onChangeActiveItem,
 }) => {
   const [respawnTimer, changeRespawnTimer] = useState("");
+  const { t } = useTranslation();
   const handleAddListenedItem = () => {
     onSuccess(value, respawnTimer);
     changeModalOpen();
@@ -75,28 +77,34 @@ const AddNewTimerModal = ({
               <RaidBossCard
                 value={value}
                 content={
-                  <input
-                    type="time"
-                    className={styles.timeInput}
-                    value={respawnTimer}
-                    onChange={(event) => {
-                      changeRespawnTimer(event.target.value);
-                    }}
-                    onBlur={(event) => {
-                      changeRespawnTimer(event.target.value);
-                    }}
-                  />
+                  <>
+                    <p className={styles.lastKillLabel}>
+                      {t("respownList.lastKillTime")}
+                    </p>
+                    <input
+                      type="time"
+                      className={styles.timeInput}
+                      value={respawnTimer}
+                      onChange={(event) => {
+                        changeRespawnTimer(event.target.value);
+                      }}
+                      onBlur={(event) => {
+                        changeRespawnTimer(event.target.value);
+                      }}
+                    />
+                  </>
                 }
                 buttons={
                   <>
                     <Button
                       icon={<RiCloseFill />}
-                      label="Close"
+                      label={t("buttons.close")}
                       onClick={handleClearCurrentAndCloseModal}
                     />
                     <Button
+                      disabled={!respawnTimer.length > 0}
                       icon={<RiPlayListAddFill />}
-                      label="Add"
+                      label={t("buttons.add")}
                       onClick={handleAddListenedItem}
                     />
                   </>

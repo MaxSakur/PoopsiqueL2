@@ -2,9 +2,12 @@ import { useState, useEffect } from "react";
 import defaultBossSpownDelay from "../../static_data/default_boss_respawn_timers.json";
 import { RAID_BOSS_SPOWN_DELAY } from "../../screens/raid_list/raidListHelpers";
 import styles from "./SpownDelay.module.css";
+import { useTranslation } from "react-i18next";
 
 const SpownDelay = () => {
   const [spownDelay, changeSpownDelay] = useState();
+  const { t } = useTranslation();
+
   useEffect(() => {
     if (spownDelay) {
       localStorage.setItem(RAID_BOSS_SPOWN_DELAY, JSON.stringify(spownDelay));
@@ -34,17 +37,17 @@ const SpownDelay = () => {
               type="text"
               disabled
               className={styles.list_item_input}
-              value="respown"
+              value={t("server_settings.respown")}
             />
             <input
               type="text"
               disabled
               className={styles.list_item_input}
-              value="random"
+              value={t("server_settings.random")}
             />
           </div>
           <div className={styles.list_item}>
-            <p className={styles.list_item_value}>All Raid Bosses</p>
+            <p className={styles.list_item_value}>{t("server_settings.all")}</p>
 
             <input
               type="number"
@@ -65,7 +68,9 @@ const SpownDelay = () => {
           </div>
 
           <div className={styles.list_item}>
-            <p className={styles.list_item_value}>Ketra/Varka (Alliance)</p>
+            <p className={styles.list_item_value}>
+              {t("server_settings.ketraVarka")}
+            </p>
 
             <input
               type="number"
@@ -85,7 +90,9 @@ const SpownDelay = () => {
             />
           </div>
           <div className={styles.list_item}>
-            <p className={styles.list_item_value}>Barakiel (Nobless)</p>
+            <p className={styles.list_item_value}>
+              {t("server_settings.nobless")}
+            </p>
 
             <input
               type="number"

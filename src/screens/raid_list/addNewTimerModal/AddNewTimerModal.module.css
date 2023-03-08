@@ -34,7 +34,7 @@
           flex-direction: column;
   padding: 8px;
   border-radius: 12px;
-  width: 480px;
+  width: 500px;
   background-color: #808080;
   gap: 12px;
 }
@@ -46,10 +46,6 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-}
-
-.activeContainer .image {
-  height: 140px;
 }
 
 .activeContainer .valueInfoContainer {
@@ -116,4 +112,9 @@
 
 .activeContainer .valueInfoContainer .buttons button:last-child {
   background-color: green;
+}
+
+.lastKillLabel {
+  padding-bottom: 8px;
+  color: #fff;
 }

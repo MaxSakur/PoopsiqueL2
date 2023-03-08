@@ -6,8 +6,12 @@ import { RiCloseFill } from "react-icons/ri";
 import Button from "../button";
 import styles from "./RespownList.module.css";
 import RaidBossName from "../raidBossName/RaidBossName";
+import { useTranslation } from "react-i18next";
+import { BsArrowDownLeft } from "react-icons/bs";
 
 const RespownList = ({ data, removeRespownedBoss }) => {
+  const { t } = useTranslation();
+
   return data ? (
     <ul className={styles.raidList}>
       {data.length > 0 ? (
@@ -21,7 +25,7 @@ const RespownList = ({ data, removeRespownedBoss }) => {
                 <li key={index} className={styles.raidList_item}>
                   <Button
                     icon={<RiCloseFill />}
-                    label="Delete"
+                    label={t("buttons.delete")}
                     onClick={() => removeRespownedBoss(el)}
                   />
                   <RaidBossName value={el} />
@@ -35,10 +39,12 @@ const RespownList = ({ data, removeRespownedBoss }) => {
             return null;
           })
       ) : (
-        <p style={{ color: "#fff" }}>
-          Start adding respowns of raid bosses
-          <br /> on left bottom corner of the screen
-        </p>
+        <div className={styles.hint_container}>
+          <div className={styles.icon_container}>
+            <Button icon={<BsArrowDownLeft />} size="xl" />
+          </div>
+          <p className={styles.hint}>{t("respownList.hint")}</p>
+        </div>
       )}
     </ul>
   ) : null;

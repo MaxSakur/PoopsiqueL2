@@ -14,6 +14,7 @@ import {
 import { BiAlarmAdd } from "react-icons/bi";
 import Button from "../../../components/button";
 import styles from "./RaidBossWaitingList.module.css";
+import { useTranslation } from "react-i18next";
 
 const RaidBossWaitingList = ({
   onRespownStart,
@@ -21,11 +22,10 @@ const RaidBossWaitingList = ({
   changeCachedDataWithTime,
 }) => {
   const [modalOpen, changeModalOpen] = useState(false);
-
   const [currentRBwithTime, changeCurrentRBwithTime] = useState();
   const [raidBossList, changeRaidBossList] = useState();
   const [loading, changeLoading] = useState(false);
-
+  const { t } = useTranslation();
   useEffect(() => {
     if (cachedDataWithTime && cachedDataWithTime.length >= 0) {
       localStorage.setItem(RAID_BOSS_DATA, JSON.stringify(cachedDataWithTime));
@@ -122,7 +122,7 @@ const RaidBossWaitingList = ({
       flex={1}
       headContent={
         <div className={styles.row}>
-          <h2>Respown list</h2>
+          <h2>{t("respownList.name")}</h2>
         </div>
       }
       bodyContent={
@@ -135,7 +135,7 @@ const RaidBossWaitingList = ({
             <Button
               size="xl"
               onClick={() => changeModalOpen(true)}
-              label="Add"
+              label={t("buttons.add")}
               icon={<BiAlarmAdd />}
             />
           </div>

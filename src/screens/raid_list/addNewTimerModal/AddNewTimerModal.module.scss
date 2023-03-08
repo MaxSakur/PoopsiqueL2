@@ -23,16 +23,13 @@
     flex-direction: column;
     padding: 8px;
     border-radius: 12px;
-    width: 480px;
+    width: 500px;
     background-color:#808080;
     gap: 12px;
 }
 .activeContainer {
     display: flex;
     flex: 1;
-    & .image {
-        height: 140px;
-    }
     & .valueInfoContainer {
         display: flex;
         text-align: left;
@@ -75,4 +72,9 @@
             }
         }
     }
+}
+
+.lastKillLabel {
+    padding-bottom: 8px;
+    color: #fff;
 }
