@@ -1,0 +1,33 @@
+.mapContainer {
+    position: relative;
+    background-color: #fff;
+    background-image: url('../../../images/bg/dinoIsleBG.png');
+    background-size: cover;
+    overflow: hidden;
+    & .tyros {   
+        cursor: grab;
+        position: absolute;
+        border-radius: 100%;
+        & img {
+            height: inherit;
+            width: inherit;
+            z-index: 1;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        & .label {
+            position: absolute;
+            color: #058dd9;
+            font-size: 23px;
+            display: flex;
+            z-index: 2;
+            top: 0;
+            bottom: 0;
+            background-color: #000;
+            padding: 0 2px;
+            align-items: center;
+        }
+    }
+}
+

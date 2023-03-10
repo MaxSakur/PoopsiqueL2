@@ -1,8 +1,11 @@
+import { useState } from "react";
 import moment from "moment";
-import React, { useMemo, useState } from "react";
 import { DEFAULT_TIME_FORMAT } from "../raid_list/raidListHelpers";
 import { generatePathByName } from "../../images";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import styles from "./DinoTracker.module.css";
+import DinoSquare from "./dinoSquare";
 
 const Tyros = ({ el, index }) => {
   return (
@@ -24,36 +27,23 @@ const Tyros = ({ el, index }) => {
   );
 };
 
+let defaultTyrosData = [
+  { id: 0, pos: 35, cd: 0 },
+  { id: 1, pos: 39, cd: 0 },
+  { id: 2, pos: 58, cd: 0 },
+  { id: 3, pos: 66, cd: 0 },
+  { id: 4, pos: 47, cd: 0 },
+];
+
 const DinoTracker = () => {
-  const [keysPressed, updateKeyPressed] = useState({});
-  const [tyros, setTyros] = useState(new Array(6).fill({}));
-  const getCode = (e) => {
-    e = e || window.event;
-    return e.key;
-  };
-
-  useMemo(() => {
-    document.addEventListener("keydown", (event) => {
-      if (event.altKey === true && isFinite(getCode(event))) {
-        if (Number(event.key) <= 5) {
-          let arr = tyros;
-          arr[Number(event.key)] = {
-            time: moment().add(5, "minutes").format(DEFAULT_TIME_FORMAT),
-          };
-          setTyros(arr);
-          console.log(Number(event.key), tyros, "tyros");
-        }
-      }
-    });
-
-    document.removeEventListener("keyup", (event) => {
-      delete keysPressed[event.key];
-    });
-  }, [keysPressed]);
+  const [tyros, updateTyros] = useState(defaultTyrosData);
 
   return (
     <div>
-      {tyros?.slice(1, tyros.length).map((el, index) => (
+      <DndProvider backend={HTML5Backend}>
+        <DinoSquare data={tyros} updateTyros={updateTyros} />
+      </DndProvider>
+      {tyros.map((el, index) => (
         <Tyros key={index} el={el} index={index} />
       ))}
     </div>

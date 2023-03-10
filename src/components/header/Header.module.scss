@@ -1,0 +1,60 @@
+.header {
+    background: #000;
+    min-height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+  }
+
+  .header img {
+    height: 100px;
+    padding: 20px 0;
+    width: auto;
+  }
+ 
+  .time {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .time p {
+    padding-bottom: 6px;
+  }
+  .header p {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 400;
+  }
+  .navigation {
+    display: flex;
+    gap: 16px;
+    padding: 16px 0;
+    &_item {
+        position: relative;
+        & a {
+        color: #fff;
+        text-decoration: none;
+        }
+        &_active {
+            & a {
+                color: red;
+                text-decoration: none;
+                position: relative;
+                &::after {
+                    content: "";
+                    width: 100%;
+                    height: 2px;
+                    display: block;
+                    position: absolute;
+                    bottom: -4px;
+                    background:  linear-gradient(180deg, #ffffff00 0%, #ff0000 50%, #ffffff00 100%);    
+                }
+            }
+            
+        }
+            
+    }
+  }
