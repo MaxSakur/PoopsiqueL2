@@ -1,8 +1,10 @@
 {
   "files": {
-    "main.css": "/PoopsiqueL2/static/css/main.476e974d.css",
-    "main.js": "/PoopsiqueL2/static/js/main.39f8733d.js",
+    "main.css": "/PoopsiqueL2/static/css/main.5e6dd25a.css",
+    "main.js": "/PoopsiqueL2/static/js/main.e83bd9cd.js",
     "static/js/787.1fa64d31.chunk.js": "/PoopsiqueL2/static/js/787.1fa64d31.chunk.js",
+    "static/media/dinoIsleBG.png": "/PoopsiqueL2/static/media/dinoIsleBG.20cdb832ce3257d85bb6.png",
+    "static/media/Dino.jpg": "/PoopsiqueL2/static/media/Dino.af6f4b16cf1fb4aaca83.jpg",
     "static/media/Anakim.jpg": "/PoopsiqueL2/static/media/Anakim.f1f81cf7b6c6a50b686b.jpg",
     "static/media/Queen Shyeed.jpg": "/PoopsiqueL2/static/media/Queen Shyeed.3cf0d6ec87937032eaa7.jpg",
     "static/media/Plague Golem.jpg": "/PoopsiqueL2/static/media/Plague Golem.6fc1535530e2a0fcec54.jpg",
@@ -39,7 +41,6 @@
     "static/media/Kernon.jpg": "/PoopsiqueL2/static/media/Kernon.e98755de9185d087fc6f.jpg",
     "static/media/Decabria.jpg": "/PoopsiqueL2/static/media/Decabria.48438faf32a19a27219d.jpg",
     "static/media/Cabrio.jpg": "/PoopsiqueL2/static/media/Cabrio.ead3d72f0f3310334167.jpg",
-    "static/media/Tanatos.jpg": "/PoopsiqueL2/static/media/Tanatos.ab16a780f8926df4b9ed.jpg",
     "static/media/Krokian Padisha Sobekk.jpg": "/PoopsiqueL2/static/media/Krokian Padisha Sobekk.e987ddba8f9c274ab4e2.jpg",
     "static/media/Behemoth.jpg": "/PoopsiqueL2/static/media/Behemoth.389f705d940881948098.jpg",
     "static/media/Flamestone Giant.jpg": "/PoopsiqueL2/static/media/Flamestone Giant.26e6da0e75d4157a11b7.jpg",
@@ -56,12 +57,12 @@
     "static/media/Meanas Anor.jpg": "/PoopsiqueL2/static/media/Meanas Anor.70eadabdc0b56d758295.jpg",
     "static/media/L2logo.png": "/PoopsiqueL2/static/media/L2logo.f8431d2823f31bd20a70.png",
     "index.html": "/PoopsiqueL2/index.html",
-    "main.476e974d.css.map": "/PoopsiqueL2/static/css/main.476e974d.css.map",
-    "main.39f8733d.js.map": "/PoopsiqueL2/static/js/main.39f8733d.js.map",
+    "main.5e6dd25a.css.map": "/PoopsiqueL2/static/css/main.5e6dd25a.css.map",
+    "main.e83bd9cd.js.map": "/PoopsiqueL2/static/js/main.e83bd9cd.js.map",
     "787.1fa64d31.chunk.js.map": "/PoopsiqueL2/static/js/787.1fa64d31.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.476e974d.css",
-    "static/js/main.39f8733d.js"
+    "static/css/main.5e6dd25a.css",
+    "static/js/main.e83bd9cd.js"
   ]
 }
