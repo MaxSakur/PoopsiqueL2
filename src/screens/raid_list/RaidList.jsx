@@ -1,8 +1,8 @@
 import { useState } from "react";
-import RaidBossSettings from "./RaidBossSettings";
-import RaidBossWaitingList from "./RaidBossWaitingList";
-import RaidBossRespowned from "./RaidBossRespowned";
-import styles from "./RaidList.module.css";
+import RaidBossSettings from "./raidBossSettings";
+import RaidBossWaitingList from "./raidBossWaitingList";
+import RaidBossRespowned from "./raidBossRespowned";
+import ScreenContainer from "../../components/screenContainer";
 
 export const RaidList = () => {
   const [respownedBoss, changeRespownedBoss] = useState(null);
@@ -17,7 +17,7 @@ export const RaidList = () => {
   };
 
   return (
-    <div className={styles.mainContainer}>
+    <ScreenContainer>
       <RaidBossSettings />
       <RaidBossWaitingList
         onRespownStart={handleAddNewRespowned}
@@ -30,6 +30,6 @@ export const RaidList = () => {
         cachedDataWithTime={cachedDataWithTime}
         changeCachedDataWithTime={changeCachedDataWithTime}
       />
-    </div>
+    </ScreenContainer>
   );
 };

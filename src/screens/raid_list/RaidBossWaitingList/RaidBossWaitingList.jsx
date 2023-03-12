@@ -6,15 +6,15 @@ import staticRaidBossData from "../../../static_data/raid_boss_interlude.json";
 import {
   RAID_BOSS_DATA,
   RESPOWNED_DATA,
-  clearAllCachedData,
+  // clearAllCachedData,
   getHoursDiff,
   getItemWithRespownTime,
-  move,
 } from "../raidListHelpers";
 import { BiAlarmAdd } from "react-icons/bi";
 import Button from "../../../components/button";
 import styles from "./RaidBossWaitingList.module.css";
 import { useTranslation } from "react-i18next";
+import { move } from "../../../utils/helpers";
 
 const RaidBossWaitingList = ({
   onRespownStart,
@@ -56,11 +56,12 @@ const RaidBossWaitingList = ({
     changeRaidBossList(filteredRBList);
   };
 
+  // NO NEED ITM
   // eslint-disable-next-line no-unused-vars
-  const handleClearCachedData = () => {
-    clearAllCachedData();
-    changeCachedDataWithTime([]);
-  };
+  // const handleClearCachedData = () => {
+  //   clearAllCachedData();
+  //   changeCachedDataWithTime([]);
+  // };
 
   const handleChangeCurrentRaidBoss = (item) => {
     changeCurrentRBwithTime(item);

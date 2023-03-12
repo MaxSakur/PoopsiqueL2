@@ -7,9 +7,6 @@ export const RESPOWNED_DATA = "respowned_data";
 export const DEFAULT_TIME_FORMAT = "HH:mm";
 export const EXTENDED_TIME_FORMAT = "DD.MM.YY HH:mm";
 
-export let move = new Audio();
-move.src = "https://www.dropbox.com/s/fiyx4q2mdwynraj/FF7CursorMove.mp3?raw=1";
-
 export const findBossByName = ({ name }) => {
   return staticRaidBossData.filter((boss) => boss.name === name);
 };

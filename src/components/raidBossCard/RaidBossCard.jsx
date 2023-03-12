@@ -1,4 +1,4 @@
-import { generatePathByName } from "../../images";
+import { generateRBPathByName } from "../../assets/images/raidBosses";
 import {
   getMaxRespTime,
   toTimeString,
@@ -19,7 +19,9 @@ const RaidBossCard = ({
     <li className={styles.activeContainer}>
       <div
         className={styles.imageContainer}
-        style={{ backgroundImage: `url("${generatePathByName(value.name)}")` }}
+        style={{
+          backgroundImage: `url("${generateRBPathByName(value.name)}")`,
+        }}
       />
 
       <div className={styles.valueInfoContainer}>

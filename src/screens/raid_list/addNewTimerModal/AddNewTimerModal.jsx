@@ -2,7 +2,7 @@ import Select from "react-select";
 import { useMemo, useState } from "react";
 import styles from "./AddNewTimerModal.module.css";
 import RaidBossCard from "../../../components/raidBossCard";
-import staticRaidBossData from "./../../../static_data/raid_boss_interlude.json";
+import staticRaidBossData from "../../../static_data/raid_boss_interlude.json";
 import Button from "../../../components/button";
 import { RiCloseFill, RiPlayListAddFill } from "react-icons/ri";
 import { useTranslation } from "react-i18next";

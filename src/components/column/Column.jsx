@@ -5,6 +5,7 @@ const Column = ({
   bodyContent,
   iconLeft,
   iconRight,
+  bodyStyles = {},
   flex,
   isOpen = true,
 }) => {
@@ -15,7 +16,9 @@ const Column = ({
         <div className={styles.head_content}>{headContent}</div>
         <div className={styles.head_button}>{iconRight}</div>
       </div>
-      <div className={styles.body}>{bodyContent}</div>
+      <div className={styles.body} style={bodyStyles}>
+        {bodyContent}
+      </div>
     </div>
   ) : (
     <div className={styles.container_closed}>

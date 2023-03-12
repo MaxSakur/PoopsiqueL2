@@ -1,5 +1,5 @@
 import styles from "./Header.module.css";
-import logo from "./../../images/L2logo.png";
+import logo from "../../assets/images/L2logo.png";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import Icon from "../icon";
@@ -33,7 +33,7 @@ export const Header = () => {
     { label: "Raid Boss Hunter", link: "/rb" },
     { label: "Dino Tracker", link: "/dino" },
     { label: "Craft Calculator", link: "/craft" },
-    { label: "Market Analizer", link: "/market" },
+    { label: "Market Analyzer", link: "/market" },
   ];
 
   const handleSetActive = (item) => {
@@ -57,8 +57,8 @@ export const Header = () => {
           {navigationData.map((el, index) => (
             <li
               key={index}
-              onMouseOver={() => setActiveIndex(index)}
-              onMouseLeave={() => setActiveIndex(index)}
+              // onMouseOver={() => setActiveIndex(index)}
+              // onMouseLeave={() => setActiveIndex(index)}
               className={
                 index === activeIndex
                   ? styles.navigation_item_active

@@ -1,0 +1,62 @@
+.tyros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 360px;
+    border-radius: 12px;
+    border-bottom-right-radius: 12px;
+    overflow: hidden;
+    padding-right: 16px;
+    box-shadow: -6px 9px 5px 0px rgba(0 , 0 ,0 , 0.35);
+    background: linear-gradient(180deg, #353A40 0%, #16171B 100%),
+    linear-gradient(180deg, #424750 0.93%, #202326 100%);    
+    border: 1px solid #000;
+    box-sizing: border-box;
+    
+    &_index {
+        width: 100px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        background-size: cover;
+        background-position: center;
+        background-color: #000;
+        position: relative;
+        z-index: 0;
+        margin-left: 12px;
+        & p {
+            background-color: #000;
+            font-size: 52px;
+            padding: 0 8px;
+            color: #058dd9;
+            position: absolute;
+            top: 0;
+            left: -12px;
+            bottom: 0;
+            z-index: 1;
+        }
+    }
+    & .timer {
+        &_value {
+            color: #fff;
+            font-size: 32px;
+            padding-right: 12px;
+        }
+    }
+    &_active {
+        @extend .tyros;
+        animation: pulse 2s infinite;
+    }
+}
+
+
+@keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0px rgba(0, 254, 0, 0.4);
+    }
+    100% {
+      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+    }
+  }
+  

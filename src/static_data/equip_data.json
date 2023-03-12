@@ -1,0 +1,132 @@
+[
+    {"value": "Basalt Battlehammer", "label": "Basalt Battlehammer", "grade": "S", "ingredients": [
+        {"name": "Recipe: Basalt Battlehammer (60%)", "count":  1 },
+        {"name": "Basalt Battlehammer Head", "count":  17 },
+        {"name": "Warsmiths Holder", "count":  4 },
+        {"name": "Mithril Alloy", "count":  154 },
+        {"name": "Synthetic Cokes", "count":  154 },
+        {"name": "Durable Metal Plate", "count":  308 },
+        {"name": "Enria", "count":  77 },
+        {"name": "Crystal: S-Grade", "count":  211 },
+        {"name": "Gemstone S", "count":  43 }
+    ], 
+        "sa": {"green": "Health", "red": "HP Drain", "blue": "HP Regeneration"}
+    },
+    {"value": "Dragon Hunter Axe", "label":"Dragon Hunter Axe", "grade": "S", "ingredients": [
+        {"name": "Recipe: Dragon Hunter Axe (60%)", "count":  1 },
+        {"name": "Dragon Hunter Axe Blade", "count":  17 },
+        {"name": "Warsmiths Holder", "count":  4 },
+        {"name": "Mithril Alloy", "count":  248 },
+        {"name": "Synthetic Cokes", "count":  124 },
+        {"name": "Durable Metal Plate", "count":  248 },
+        {"name": "Enria", "count":  62 },
+        {"name": "Crystal: S-Grade", "count":  211 },
+        {"name": "Gemstone S", "count":  43 }
+    ],
+    "sa": {"green": "Health", "red": "HP Regen", "blue": "HP Drain"}
+    },
+    {"value": "Arcana Mace", "label":"Arcana Mace",  "grade": "S", "ingredients": [
+        {"name": "Recipe: Arcana Mace (60%)", "count":  1 },
+        {"name": "Arcana Mace Head", "count":  17 },
+        {"name": "Warsmiths Holder", "count":  4 },
+        {"name": "Mithril Alloy", "count":  154 },
+        {"name": "Synthetic Cokes", "count":  154 },
+        {"name": "Durable Metal Plate", "count":  308 },
+        {"name": "Enria", "count":  77 },
+        {"name": "Crystal: S-Grade", "count":  211 },
+        {"name": "Gemstone S", "count":  43 }
+    ],
+    "sa": {"green": "MP Regeneration", "red": "Acumen", "blue": "Mana Up"}
+    },
+    {"value": "Imperial Staff", "label":"Imperial Staff",  "grade": "S", "ingredients": [
+        {"name": "Recipe: Imperial Staff (60%)", "count":  1 },
+        {"name": "Basalt Battlehammer Head", "count":  17 },
+        {"name": "Warsmiths Holder", "count":  4 },
+        {"name": "Mithril Alloy", "count":  154 },
+        {"name": "Synthetic Cokes", "count":  154 },
+        {"name": "Durable Metal Plate", "count":  308 },
+        {"name": "Enria", "count":  77 },
+        {"name": "Crystal: S-Grade", "count":  211 },
+        {"name": "Gemstone S", "count":  43 }
+    ],
+    "sa": {"green": "Health", "red": "HP Drain", "blue": "HP Regeneration"}
+    },
+    {"value": "Saint Spear", "label":"Saint Spear",  "grade": "S", "ingredients": [
+        {"name": "Recipe: Saint Spear (60%)", "count":  1 },
+        {"name": "Saint Spear Blade", "count":  17 },
+        {"name": "Warsmiths Holder", "count":  4 },
+        {"name": "Mithril Alloy", "count":  248 },
+        {"name": "Synthetic Cokes", "count":  124 },
+        {"name": "Durable Metal Plate", "count":  248 },
+        {"name": "Enria", "count":  62 },
+        {"name": "Crystal: S-Grade", "count":  214 },
+        {"name": "Gemstone S", "count":  43 }
+    ],
+    "sa": {"green": "Guidance", "red": "Health", "blue": "Haste"}
+    },
+    {"value": "Forgotten Blade", "label":"Forgotten Blade",  "grade": "S", "ingredients": [
+        {"name": "Recipe: Forgotten Blade (60%)", "count":  1 },
+        {"name": "Forgotten Blade Edge", "count":  17 },
+        {"name": "Warsmiths Holder", "count":  4 },
+        {"name": "Mithril Alloy", "count":  264 },
+        {"name": "Synthetic Cokes", "count":  264 },
+        {"name": "Durable Metal Plate", "count":  132 },
+        {"name": "Enria", "count":  132 },
+        {"name": "Crystal: S-Grade", "count":  211 },
+        {"name": "Gemstone S", "count":  43 }
+    ],
+    "sa": {"green": "Health", "red": "Haste", "blue": "Focus"}
+    },
+    {"value": "Heavens Divider",  "label":"Heavens Divider", "grade": "S", "ingredients": [
+        {"name": "Recipe: Heavens Divider (60%)", "count":  1 },
+        {"name": "Heavens Divider Edge", "count":  17 },
+        {"name": "Warsmiths Holder", "count":  4 },
+        {"name": "Mithril Alloy", "count":  292 },
+        {"name": "Synthetic Cokes", "count":  146 },
+        {"name": "Durable Metal Plate", "count":  146 },
+        {"name": "Enria", "count":  146},
+        {"name": "Crystal: S-Grade", "count":  212 },
+        {"name": "Gemstone S", "count":  43 }
+    ],
+    "sa": {"green": "Health", "red": "Haste", "blue": "Focus"}
+    },
+    {"value": "Angel Slayer",  "label":"Angel Slayer", "grade": "S", "ingredients": [
+        {"name": "Recipe: Angel Slayer (60%)", "count":  1 },
+        {"name": "Angel Slayer Blade", "count":  17 },
+        {"name": "Warsmiths Holder", "count":  4 },
+        {"name": "Mithril Alloy", "count":  264 },
+        {"name": "Synthetic Cokes", "count":  264 },
+        {"name": "Durable Metal Plate", "count":  132 },
+        {"name": "Enria", "count":  132 },
+        {"name": "Crystal: S-Grade", "count":  211 },
+        {"name": "Gemstone S", "count":  43 }
+    ],
+    "sa": {"green": "HP Drain", "red": "Crt. Damage", "blue": "Haste"}
+    },
+    {"value": "Draconic Bow", "label":"Draconic Bow",  "grade": "S", "ingredients": [
+        {"name": "Recipe: Draconic Bow (60%)", "count":  1 },
+        {"name": "Draconic Bow Shaft", "count":  17 },
+        {"name": "Warsmiths Holder", "count":  4 },
+        {"name": "Mithril Alloy", "count":  375 },
+        {"name": "Synthetic Cokes", "count":  75 },
+        {"name": "Durable Metal Plate", "count":  150 },
+        {"name": "Enria", "count":  75 },
+        {"name": "Crystal: S-Grade", "count":  212 },
+        {"name": "Gemstone S", "count":  43 }
+    ],
+    "sa": {"green": "Focus", "red": "Cheap Shot", "blue": "Critical Slow"}
+    },
+    {"value": "Demon Splinter", "label":"Demon Splinter",  "grade": "S", "ingredients": [
+        {"name": "Recipe: Demon Splinter (60%)", "count":  1 },
+        {"name": "Demon Splinter Blade", "count":  17 },
+        {"name": "Warsmiths Holder", "count":  4 },
+        {"name": "Mithril Alloy", "count":  154 },
+        {"name": "Synthetic Cokes", "count":  154 },
+        {"name": "Durable Metal Plate", "count":  308 },
+        {"name": "Enria", "count":  77 },
+        {"name": "Crystal: S-Grade", "count":  211 },
+        {"name": "Gemstone S", "count":  43 }
+    ],
+    "sa": {"green": "Health", "red": "Focus", "blue": "Crt. Stun"}
+    }
+]

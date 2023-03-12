@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { generatePathByName } from "../../../images";
+import { generateRBPathByName } from "../../../assets/images/raidBosses";
 import DinoOverlay from "../dinoOverlay";
 import styles from "./DinoSquare.module.css";
 
 // PROVIDE HALF OF WIDTH OF PARENT CONTAINER
-export const SQUARE_SIZE = 400;
+export const SQUARE_SIZE = 600;
 export const DRAGGBLE_EL_SIZE = SQUARE_SIZE / 10;
 
 const getHorizontalPosition = (index) => {
@@ -30,7 +30,7 @@ const DinoSquare = ({ data, updateTyros }) => {
       ...result[currentTyrosIndex],
       pos: lastActiveElement,
     };
-    console.log(lastActiveElement);
+
     updateTyros(result);
     setReloaded(!reloaded);
   };
@@ -55,7 +55,7 @@ const DinoSquare = ({ data, updateTyros }) => {
           onDragEnd={() => handleDragEnd(el)}
           key={index}
         >
-          <img src={`${generatePathByName("Dino")}`} alt="Tyronassaurus" />
+          <img src={`${generateRBPathByName("Dino")}`} alt="Tyronassaurus" />
           <p className={styles.label}>{index + 1}</p>
         </div>
       ))}

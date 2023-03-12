@@ -22,6 +22,12 @@ export const RU_TRANSLATION_KEYS = {
       "Нажмите обновить, чтоб вернуть в список ожидания.",
     ],
   },
+  craft: {
+    header: "Крафт",
+    resourses: "Общее кол-во ресурсов",
+    craft_emulator: "Эмулятор крафта",
+    enchant_emulator: "Эмулятор заточки",
+  },
   buttons: {
     hint: "Помощь",
     add: "Добавить",

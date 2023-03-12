@@ -108,6 +108,6 @@ export const images = {
   Dino,
 };
 
-export const generatePathByName = (name) => {
+export const generateRBPathByName = (name) => {
   return images[name.replace(/\s/g, "")];
 };
