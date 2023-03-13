@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { generateRBPathByName } from "../../assets/images/raidBosses";
 import {
   getMaxRespTime,
@@ -61,4 +62,4 @@ const RaidBossCard = ({
   );
 };
 
-export default RaidBossCard;
+export default memo(RaidBossCard);

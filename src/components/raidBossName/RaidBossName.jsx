@@ -1,4 +1,5 @@
 import React from "react";
+import { memo } from "react";
 import styles from "./RaidBossName.module.css";
 
 const RaidBossName = ({ value }) => {
@@ -12,4 +13,4 @@ const RaidBossName = ({ value }) => {
   );
 };
 
-export default RaidBossName;
+export default memo(RaidBossName);

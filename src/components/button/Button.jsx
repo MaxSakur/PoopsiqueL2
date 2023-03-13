@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import styles from "./Button.module.css";
 
 const Button = ({
@@ -53,4 +53,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default memo(Button);

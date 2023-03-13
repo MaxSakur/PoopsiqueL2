@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    & .header {
+        & .header_line {
+            padding: 8px 16px;
+            display: flex;
+            justify-content: center;
+            // align-items: center;
+            gap: 16px;
+
+            &_image {
+                display: flex;
+                justify-self: center;
+                background-size: auto;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 36px;
+                width: 36px;
+            }
+
+            &_select {
+                flex: 1;
+            }
+
+            &_input {
+                font-size: 24px;
+                font-weight: 600;
+                padding: 0 12px;
+                border-radius: 8px;
+                width: 30px;
+                text-align: center
+            }
+
+            & .enchant {
+
+
+
+                &_button {
+                    @extend .header_line;
+                    border: 1px solid #fff;
+
+                    &_image {}
+                }
+            }
+        }
+    }
+
+    & .body {
+        display: flex;
+        align-self: center;
+    }
+
+}

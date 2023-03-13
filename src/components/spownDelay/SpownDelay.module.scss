@@ -54,10 +54,6 @@
         margin: 0;
         }
 
-        input[type=number] {
-            appearance: textfield;
-        }
-
         &:first-child {
             &::before {
                 display: none;

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import styles from "./Column.module.css";
 
 const Column = ({
@@ -30,4 +31,4 @@ const Column = ({
   );
 };
 
-export default Column;
+export default memo(Column);

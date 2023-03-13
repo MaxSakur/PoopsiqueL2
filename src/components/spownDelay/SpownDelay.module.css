@@ -85,12 +85,6 @@
   margin: 0;
 }
 
-.list_item input[type=number] {
-  -webkit-appearance: textfield;
-     -moz-appearance: textfield;
-          appearance: textfield;
-}
-
 .list_item:first-child::before {
   display: none;
 }

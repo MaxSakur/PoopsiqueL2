@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import styles from "./Icon.module.css";
 
 const Icon = ({
@@ -36,4 +36,4 @@ const Icon = ({
   );
 };
 
-export default Icon;
+export default memo(Icon);

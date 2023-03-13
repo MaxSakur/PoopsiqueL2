@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import { generateRBPathByName } from "../../../assets/images/raidBosses";
 import DinoOverlay from "../dinoOverlay";
 import styles from "./DinoSquare.module.css";
@@ -63,4 +63,4 @@ const DinoSquare = ({ data, updateTyros }) => {
   );
 };
 
-export default DinoSquare;
+export default memo(DinoSquare);

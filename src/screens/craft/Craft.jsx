@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import Column from "../../components/column";
 import ScreenContainer from "../../components/screenContainer";
@@ -10,22 +10,15 @@ const Craft = () => {
   return (
     <ScreenContainer>
       <Column flex={1} headContent={<p>{t("craft.header")}</p>} />
-      <Column flex={1} headContent={<p>{t("craft.resourses")}</p>} />
+      <Column flex={2} headContent={<p>{t("craft.resourses")}</p>} />
       <Column
         flex={1}
-        bodyStyles={{ minHeight: "400px" }}
+        bodyStyles={{ minHeight: "320px" }}
         headContent={<p>{t("craft.enchant_emulator")} </p>}
-        bodyContent={
-          <div>
-            <EnchantCalculator />
-          </div>
-        }
+        bodyContent={<EnchantCalculator />}
       />
-      <div>
-        <EnchantCalculator />
-      </div>
     </ScreenContainer>
   );
 };
 
-export default Craft;
+export default memo(Craft);

@@ -28,6 +28,23 @@ export const RU_TRANSLATION_KEYS = {
     craft_emulator: "Эмулятор крафта",
     enchant_emulator: "Эмулятор заточки",
   },
+  weapon: {
+    twoHanded: "двуручное",
+    oneHanded: "одноручное",
+    spec: "Спицификация оружия",
+    PAttack: "P.Atk.",
+    MAttack: "M.Atk.",
+    AtackSpeed: {
+      label: "Скор.Атаки",
+      slow: "Медленно",
+      normal: "Нормальная",
+      fast: "Быстро",
+      veryFast: "Очень быстро",
+    },
+    soulUsing: "Исп.SoulShot`s",
+    spiritUsing: "Исп.SpititShot`s",
+    weight: "Вес",
+  },
   buttons: {
     hint: "Помощь",
     add: "Добавить",
