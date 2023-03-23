@@ -6,7 +6,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 24px;
+  gap: 8px;
 }
 
 .container .header .header_line, .container .header .header_line .enchant_button {
@@ -17,7 +17,10 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
 }
 
 .container .header .header_line_image {
@@ -30,6 +33,7 @@
   background-size: cover;
   height: 36px;
   width: 36px;
+  border-radius: 4px;
 }
 
 .container .header .header_line_select {
@@ -41,7 +45,7 @@
 .container .header .header_line_input {
   font-size: 24px;
   font-weight: 600;
-  padding: 0 12px;
+  padding: 4px 12px;
   border-radius: 8px;
   width: 30px;
   text-align: center;

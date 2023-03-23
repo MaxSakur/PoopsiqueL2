@@ -50,9 +50,8 @@ export const Header = () => {
 
   return (
     <div className={styles.header}>
-      <p>Ave, Poopsique</p>
+      <img src={logo} alt="" />
       <div>
-        <img src={logo} alt="" />
         <ul className={styles.navigation}>
           {navigationData.map((el, index) => (
             <li

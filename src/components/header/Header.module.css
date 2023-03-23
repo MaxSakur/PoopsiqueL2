@@ -1,6 +1,6 @@
 .header {
   background: #000;
-  min-height: 100px;
+  min-height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,7 +14,7 @@
 }
 
 .header img {
-  height: 100px;
+  height: 40px;
   padding: 20px 0;
   width: auto;
 }

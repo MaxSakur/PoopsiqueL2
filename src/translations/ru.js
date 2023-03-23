@@ -53,5 +53,6 @@ export const RU_TRANSLATION_KEYS = {
     close: "Закрыть",
     delete: "Удалить",
     reset: "Обновить",
+    calculate: "Рассчитать",
   },
 };

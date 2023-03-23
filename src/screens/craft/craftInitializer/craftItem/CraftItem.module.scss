@@ -1,0 +1,28 @@
+.row {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    & p {
+        color: #fff;
+        font-size: 40px;
+        line-height: 1;
+    }
+
+    & .select {
+        flex: 1
+    }
+
+    & .count {
+        width: 60px;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    & .plus_container {
+        display: flex;
+        justify-content: flex-end;
+    }
+}

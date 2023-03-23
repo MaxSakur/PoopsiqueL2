@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import RaidBossSettings from "./raidBossSettings";
 import RaidBossWaitingList from "./raidBossWaitingList";
 import RaidBossRespowned from "./raidBossRespowned";
