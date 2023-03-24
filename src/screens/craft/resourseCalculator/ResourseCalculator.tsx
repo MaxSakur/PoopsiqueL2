@@ -1,29 +1,11 @@
 import React, { memo, useState, useEffect, ReactElement } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux";
+import { RaidBoss } from "../../../types/craft.types";
 // import styles from "./ResourseCalculator.module.css";
 
 type ResourseCalculatorType = {
   data: RaidBoss[];
-};
-
-enum Grade {
-  D = "D",
-  C = "D",
-  B = "B",
-  A = "A",
-  S = "S",
-}
-
-type RaidBoss = {
-  value: string;
-  label: string;
-  type: Object;
-  isTwoHanded: boolean;
-  speed: string;
-  grade: Grade;
-  PAtack: number;
-  MAtack: number;
 };
 
 const ResourseCalculator = ({ data }: ResourseCalculatorType): ReactElement => {
@@ -36,6 +18,7 @@ const ResourseCalculator = ({ data }: ResourseCalculatorType): ReactElement => {
 
   useEffect(() => {
     console.log(craft, "craft");
+    setResourseList(craft);
   }, [craft]);
 
   return (

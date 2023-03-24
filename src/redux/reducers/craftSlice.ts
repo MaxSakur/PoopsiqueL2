@@ -1,44 +1,36 @@
 import { createSlice, current } from "@reduxjs/toolkit";
+import { RaidBoss } from "../../types/craft.types";
+
+interface CraftSlice {
+  data: Array<RaidBoss>;
+}
+
+const initialState: CraftSlice = {
+  data: [],
+};
 
 const craftSlice = createSlice({
   name: "craft",
-  initialState: {
-    data: [],
-  },
+  initialState,
   reducers: {
     addCraftItem(state, action) {
-      console.log("action.payload ===>", action.payload);
       const { el, count } = action.payload;
-
+      const newItem = { ...el, count: count || 1 };
       // RE-CHECK
       const isMatched = state.data.filter(
         (i) => i.value === action.payload.value
       );
 
-      console.log("el", el, "length === ", isMatched.length);
       if (isMatched.length > 0) {
         // FILTER AND UPDATE LIST
-        console.log("0", state.data);
-      } else if (current(state).data === 0) {
-        state.data = [el];
-
-        console.log(
-          "----------",
-
-          current(state).data
-        );
-
-        console.log("2", state.data);
+        console.log("1", isMatched);
+      } else if (current(state).data.length === 0) {
+        state.data = [newItem];
+        console.log("2", current(state));
       } else {
-        state.data = [...state.data, current(state).data];
-        console.log("3", state.data);
+        state.data = [...state.data, newItem];
+        console.log("3", current(state));
       }
-      // state.data[index] = {
-      //   ...el,
-      //   count: count || 1,
-      // };
-      // console.log("index ===>", index);
-      // console.log("STORE DATA ===>", current(state).data);
     },
     updateCraftItem(state, action) {
       console.log("action.payload ===>", action);

@@ -1,11 +1,23 @@
 import React, { useState, memo } from "react";
 import styles from "./Button.module.css";
 
-const Button = ({
+enum ButtonSizes {
+  sm = "sm",
+  xl = "xl",
+}
+
+type ButtonType = {
+  label: string;
+  icon: JSX.Element;
+  onClick?: () => void;
+  externalLink?: string;
+  size?: ButtonSizes;
+};
+
+const Button: React.FC<ButtonType> = ({
   label,
   icon,
   onClick,
-  disabled = false,
   externalLink,
   size = "sm",
 }) => {
@@ -46,7 +58,7 @@ const Button = ({
       onMouseOver={handleActive}
       onMouseLeave={handleDisabled}
       style={iconStyleConditions}
-      onClick={!disabled && onClick}
+      onClick={onClick}
     >
       <Content />
     </div>
