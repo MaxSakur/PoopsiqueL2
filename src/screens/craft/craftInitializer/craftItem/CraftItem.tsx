@@ -8,6 +8,7 @@ import static_data from "./../../../../static_data/equip_data.json";
 import { RootState } from "../../../../redux";
 import { useDispatch, useSelector } from "react-redux";
 import _ from "lodash-es";
+import { updateCraftItem } from "../../../../redux/reducers/craftSlice";
 
 type CraftItemType = {
   // craftValue: RaidBoss | RaidBoss[];
@@ -27,17 +28,12 @@ const CraftItem: React.FC<CraftItemType> = ({
   item,
   index,
 }) => {
-  const [currentSelect, setCurrentSelect] = useState<RaidBoss | null>(null);
-  const [currentInput, setCurrentInput] = useState<number>(1);
-  const craft = useSelector((state: RootState) => state.craft.data);
+  const [currentSelect, setCurrentSelect] = useState<RaidBoss>(item);
+  const [currentCount, setcurrentCount] = useState<number>(1);
+  const craft: RaidBoss[] = useSelector((state: RootState) => state.craft.data);
   const dispatch = useDispatch();
-  type SelectOption = {
-    label: string;
-    value: string;
-  };
 
   const isSelectOption = (v: any): v is RaidBoss => {
-    console.log(v);
     if ((v as RaidBoss).value !== undefined) return v;
     return false;
   };
@@ -51,32 +47,20 @@ const CraftItem: React.FC<CraftItemType> = ({
         return result;
       }
     };
-    // setCountValue(resultConditions);
-    setCurrentInput(resultConditions);
+
+    setcurrentCount(resultConditions);
+    dispatch(
+      updateCraftItem({ el: currentSelect, index, count: resultConditions() })
+    );
   };
 
   const getSelectData = () => {
-    let normalizedData = craft.map((x: RaidBoss) => {
-      let normalizedItem = () => {
-        let arr: any = {};
-        for (const [key, value] of Object.entries(x)) {
-          if (key === "count") {
-            return "";
-          }
-          arr[key as any] = value;
-        }
-        console.log("arr =--------------", arr);
-        return arr;
-      };
-      console.log("normalizedItem", normalizedItem());
+    return _.differenceBy(static_data, craft, "value");
+  };
 
-      // console.log("NOOONONONON", normalizedItem);
-      return x;
-    });
-
-    console.log("normalizedData", normalizedData);
-
-    return _.difference(static_data as RaidBoss[], normalizedData);
+  const hangleUpdate = (e: RaidBoss) => {
+    setCurrentSelect(e);
+    dispatch(updateCraftItem({ el: e, index }));
   };
 
   return (
@@ -84,12 +68,10 @@ const CraftItem: React.FC<CraftItemType> = ({
       <Select
         className={styles.select}
         value={currentSelect}
-        //
         options={getSelectData() as any}
         onChange={(v) => {
           if (isSelectOption(v)) {
-            console.log(v);
-            setCurrentSelect(v);
+            hangleUpdate(v);
           }
         }}
       />
@@ -97,7 +79,7 @@ const CraftItem: React.FC<CraftItemType> = ({
       <input
         type="number"
         max={100}
-        value={currentInput}
+        value={currentCount}
         className={styles.count}
         onChange={handleUpdateCount}
       />

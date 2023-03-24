@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import RaidBossSettings from "./raidBossSettings";
-import RaidBossWaitingList from "./raidBossWaitingList";
-import RaidBossRespowned from "./raidBossRespowned";
+import RaidBossSettings from "./RaidBossSettings";
+import RaidBossWaitingList from "./RaidBossWaitingList";
+import RaidBossRespowned from "./RaidBossRespowned";
 import ScreenContainer from "../../components/screenContainer";
 
 export const RaidList = () => {

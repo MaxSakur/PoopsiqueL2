@@ -6,6 +6,11 @@ export enum Grade {
   S = "S",
 }
 
+export type Resourse = {
+  name: string;
+  count: number;
+};
+
 export type RaidBoss = {
   value: string;
   label: string;
@@ -16,4 +21,5 @@ export type RaidBoss = {
   grade: Grade | string;
   PAtack: number;
   MAtack: number;
+  ingridients: Array<Resourse>;
 };

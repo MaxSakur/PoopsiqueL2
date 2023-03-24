@@ -7,10 +7,8 @@ import Button from "../../../components/button";
 import { addCraftItem } from "../../../redux/reducers/craftSlice";
 import CraftItem from "./craftItem";
 import static_data from "../../../static_data/equip_data.json";
-
-import styles from "./CraftInitializer.module.css";
 import { RootState } from "../../../redux";
-import { RaidBoss } from "../../../types/craft.types";
+import styles from "./CraftInitializer.module.css";
 
 const CraftInitializer = () => {
   const craft = useSelector((state: RootState) => state.craft.data);

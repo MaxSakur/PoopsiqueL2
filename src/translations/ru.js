@@ -23,7 +23,7 @@ export const RU_TRANSLATION_KEYS = {
     ],
   },
   craft: {
-    header: "Крафт",
+    header: "Крафт S оружия",
     resourses: "Общее кол-во ресурсов",
     craft_emulator: "Эмулятор крафта",
     enchant_emulator: "Эмулятор заточки",

@@ -13,6 +13,10 @@
   border-radius: 16px;
 }
 
+.container h2, .container_closed h2 {
+  font-size: 1rem;
+}
+
 .container .head, .container_closed .head {
   padding: 0 12px;
   background: #000;
@@ -35,6 +39,7 @@
 
 .container .head_content, .container_closed .head_content {
   color: #fff;
+  font-size: 1rem;
 }
 
 .container .head_button, .container_closed .head_button {

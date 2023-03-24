@@ -9,14 +9,14 @@ import { Link } from "react-router-dom";
 
 export const Header = () => {
   const now = moment().format("HH:mm:ss");
-  const [currentTime, updateCurrentTime] = useState("");
-  const [toggle, setToggleChange] = useState(true);
-  const [isHovered, setIsHovered] = useState(false);
+  // const [currentTime, updateCurrentTime] = useState("");
+  // const [toggle, setToggleChange] = useState(true);
+  // const [isHovered, setIsHovered] = useState(false);
   Object.keys(lngs).map((lng) => i18n.changeLanguage(lng));
 
-  useEffect(() => {
-    setTimeout(() => updateCurrentTime(now), 1000);
-  }, [now]);
+  // useEffect(() => {
+  //   setTimeout(() => updateCurrentTime(now), 1000);
+  // }, [now]);
 
   //  <FormControlLabel
   //         control={
@@ -73,7 +73,7 @@ export const Header = () => {
       </div>
       <div className={styles.time}>
         <Icon color={"#058DD9"} noBorder icon={<BsClock />} />{" "}
-        <p>{currentTime}</p>
+        {/* <p>{currentTime}</p> */}
       </div>
     </div>
   );

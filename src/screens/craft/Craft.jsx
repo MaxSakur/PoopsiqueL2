@@ -8,7 +8,6 @@ import ResourseCalculator from "./resourseCalculator";
 
 const Craft = () => {
   const { t } = useTranslation();
-  const [currentCraftData, setCurrentCraftData] = useState([]);
 
   return (
     <ScreenContainer>
@@ -16,14 +15,12 @@ const Craft = () => {
         flex={1}
         bodyStyles={{ minHeight: "320px" }}
         headContent={<h2>{t("craft.header")}</h2>}
-        bodyContent={
-          <CraftInitializer setCurrentCraftData={setCurrentCraftData} />
-        }
+        bodyContent={<CraftInitializer />}
       />
       <Column
         flex={2}
         headContent={<h2>{t("craft.resourses")}</h2>}
-        bodyContent={<ResourseCalculator data={currentCraftData} />}
+        bodyContent={<ResourseCalculator />}
       />
       <Column
         flex={1}

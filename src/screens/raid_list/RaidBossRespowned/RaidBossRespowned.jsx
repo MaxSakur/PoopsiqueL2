@@ -94,7 +94,7 @@ const RaidBossRespowned = ({
                 {t("almostRespownedList.hints", { returnObjects: true }).map(
                   (el, index) => {
                     return (
-                      <li>
+                      <li key={index}>
                         <p className={styles.hint}>{`${index + 1}) ${el}`}</p>
                       </li>
                     );
