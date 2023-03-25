@@ -1,10 +1,4 @@
-import React, {
-  memo,
-  useState,
-  useEffect,
-  ReactElement,
-  useCallback,
-} from "react";
+import React, { memo, useState, useEffect, ReactElement } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux";
 import { Resourse, RaidBoss } from "../../../types/craft.types";
@@ -27,15 +21,10 @@ const ResourseCalculator = (): ReactElement => {
         return null;
       });
 
-      console.log("resourseList", resourses);
       setResourseList(resourses);
       return null;
     });
   }, [craft]);
-
-  useEffect(() => {
-    console.log("resourseList", resourseList);
-  }, [craft, resourseList]);
 
   return (
     <div>
