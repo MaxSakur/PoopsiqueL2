@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/PoopsiqueL2/static/css/main.1e40d4ab.css",
-    "main.js": "/PoopsiqueL2/static/js/main.da1a0ba3.js",
+    "main.css": "/PoopsiqueL2/static/css/main.07998f4e.css",
+    "main.js": "/PoopsiqueL2/static/js/main.d5813f92.js",
     "static/js/787.1fa64d31.chunk.js": "/PoopsiqueL2/static/js/787.1fa64d31.chunk.js",
     "static/media/dinoIsleBG.png": "/PoopsiqueL2/static/media/dinoIsleBG.20cdb832ce3257d85bb6.png",
     "static/media/Dino.jpg": "/PoopsiqueL2/static/media/Dino.af6f4b16cf1fb4aaca83.jpg",
@@ -57,12 +57,12 @@
     "static/media/Meanas Anor.jpg": "/PoopsiqueL2/static/media/Meanas Anor.70eadabdc0b56d758295.jpg",
     "static/media/L2logo.png": "/PoopsiqueL2/static/media/L2logo.f8431d2823f31bd20a70.png",
     "index.html": "/PoopsiqueL2/index.html",
-    "main.1e40d4ab.css.map": "/PoopsiqueL2/static/css/main.1e40d4ab.css.map",
-    "main.da1a0ba3.js.map": "/PoopsiqueL2/static/js/main.da1a0ba3.js.map",
+    "main.07998f4e.css.map": "/PoopsiqueL2/static/css/main.07998f4e.css.map",
+    "main.d5813f92.js.map": "/PoopsiqueL2/static/js/main.d5813f92.js.map",
     "787.1fa64d31.chunk.js.map": "/PoopsiqueL2/static/js/787.1fa64d31.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e40d4ab.css",
-    "static/js/main.da1a0ba3.js"
+    "static/css/main.07998f4e.css",
+    "static/js/main.d5813f92.js"
   ]
 }
